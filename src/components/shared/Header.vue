@@ -147,11 +147,31 @@ const openMenu = ref(false);
 const { locale, t } = useI18n();
 
 const languages = [
-  { code: "pl", label: "PL", flagImg: "src/assets/shared/pl-flag.png" },
-  { code: "en", label: "EN", flagImg: "src/assets/shared/en-flag.png" },
-  { code: "fr", label: "FR", flagImg: "src/assets/shared/fr-flag.png" },
-  { code: "it", label: "IT", flagImg: "src/assets/shared/it-flag.png" },
-  { code: "de", label: "DE", flagImg: "src/assets/shared/de-flag.png" },
+  {
+    code: "pl",
+    label: "PL",
+    flagImg: new URL("../../assets/shared/pl-flag.png", import.meta.url).href,
+  },
+  {
+    code: "en",
+    label: "EN",
+    flagImg: new URL("../../assets/shared/en-flag.png", import.meta.url).href,
+  },
+  {
+    code: "fr",
+    label: "FR",
+    flagImg: new URL("../../assets/shared/fr-flag.png", import.meta.url).href,
+  },
+  {
+    code: "it",
+    label: "IT",
+    flagImg: new URL("../../assets/shared/it-flag.png", import.meta.url).href,
+  },
+  {
+    code: "de",
+    label: "DE",
+    flagImg: new URL("../../assets/shared/de-flag.png", import.meta.url).href,
+  },
 ];
 
 const currentLanguage = ref(

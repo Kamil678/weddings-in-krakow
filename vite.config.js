@@ -3,7 +3,7 @@ import vue from "@vitejs/plugin-vue";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/weddings-in-krakow/",
+  base: process.env.NODE_ENV === "production" ? "/weddings-in-krakow/" : "/",
   plugins: [vue()],
   css: {
     preprocessorOptions: {
