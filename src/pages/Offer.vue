@@ -1,5 +1,5 @@
 <template>
-  {{ $t("navHome") }}
+  {{ $t("navOffer") }}
 </template>
 <script setup></script>
 

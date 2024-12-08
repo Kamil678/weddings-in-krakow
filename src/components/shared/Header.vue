@@ -28,7 +28,7 @@
         </li>
         <li class="header__nav__list__element">
           <router-link
-            to="/about"
+            to="/offer"
             class="header__nav__list__link"
             active-class="active"
             @click="openMenu = false"
@@ -37,7 +37,7 @@
         </li>
         <li class="header__nav__list__element">
           <router-link
-            to="/offer"
+            to="/humanist-weddings"
             class="header__nav__list__link"
             active-class="active"
             @click="openMenu = false"
@@ -46,7 +46,7 @@
         </li>
         <li class="header__nav__list__element">
           <router-link
-            to="/gallery"
+            to="/wedding-day-coordination"
             class="header__nav__list__link"
             active-class="active"
             @click="openMenu = false"
@@ -55,7 +55,7 @@
         </li>
         <li class="header__nav__list__element">
           <router-link
-            to="/contact"
+            to="/portfolio"
             class="header__nav__list__link"
             active-class="active"
             @click="openMenu = false"
@@ -64,7 +64,7 @@
         </li>
         <li class="header__nav__list__element">
           <router-link
-            to="/contact"
+            to="/opinions"
             class="header__nav__list__link"
             active-class="active"
             @click="openMenu = false"
@@ -73,7 +73,7 @@
         </li>
         <li class="header__nav__list__element">
           <router-link
-            to="/contact"
+            to="/offer-halls"
             class="header__nav__list__link"
             active-class="active"
             @click="openMenu = false"
@@ -322,7 +322,6 @@ onBeforeUnmount(() => {
           border-radius: 4px;
           cursor: pointer;
           display: flex;
-          border: 2px solid $primary-color;
 
           &__img-flag {
             margin-right: 10px;
