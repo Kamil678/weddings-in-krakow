@@ -1,5 +1,10 @@
 {
-  "welcome": "Welcome",
-  "about": "About Us",
-  "contact": "Contact"
+  "navHome": "Home",
+  "navOffer": "Offer",
+  "navHumanistWeddings": "Śluby humanistyczne",
+  "navWeddingDayCoordination": "Koordynacja dnia ślubu",
+  "navProtfolio": "Portfolio",
+  "navOpinions": "Opinions",
+  "navOfferHalls": "Oferta dla sal",
+  "navContact": "Kontakt"
 }

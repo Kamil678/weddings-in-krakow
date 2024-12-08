@@ -1,5 +1,5 @@
 <template>
-  Home
+  {{ $t("welcome") }}
 </template>
 <script setup>
 </script>
