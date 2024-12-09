@@ -1,6 +1,4 @@
-<template>
-  {{ $t("navHome") }}
-</template>
+<template>Opinie</template>
 <script setup></script>
 
 <style scoped></style>
