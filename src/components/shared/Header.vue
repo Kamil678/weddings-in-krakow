@@ -20,13 +20,7 @@
         >
           &times;
         </button>
-        <router-link to="/" class="header__logo">
-          <img
-            src="../../assets/shared/logo.png"
-            alt="Wedding friends logo"
-            class="header__logo__image"
-          />
-        </router-link>
+        <Logo />
         <div ref="dropdownRef" class="dropdown" @click="toggleDropdown">
           <button class="dropdown__button">
             <img
@@ -83,22 +77,6 @@
         </li>
         <li class="header__nav__list__element">
           <router-link
-            to="/humanist-weddings"
-            class="header__nav__list__link"
-            active-class="active"
-            >{{ $t("navHumanistWeddings") }}</router-link
-          >
-        </li>
-        <li class="header__nav__list__element">
-          <router-link
-            to="/wedding-day-coordination"
-            class="header__nav__list__link"
-            active-class="active"
-            >{{ $t("navWeddingDayCoordination") }}</router-link
-          >
-        </li>
-        <li class="header__nav__list__element">
-          <router-link
             to="/portfolio"
             class="header__nav__list__link"
             active-class="active"
@@ -111,6 +89,22 @@
             class="header__nav__list__link"
             active-class="active"
             >{{ $t("navOpinions") }}</router-link
+          >
+        </li>
+        <li class="header__nav__list__element">
+          <router-link
+            to="/humanist-weddings"
+            class="header__nav__list__link"
+            active-class="active"
+            >{{ $t("navHumanistWeddings") }}</router-link
+          >
+        </li>
+        <li class="header__nav__list__element">
+          <router-link
+            to="/wedding-day-coordination"
+            class="header__nav__list__link"
+            active-class="active"
+            >{{ $t("navWeddingDayCoordination") }}</router-link
           >
         </li>
         <li class="header__nav__list__element">
@@ -174,6 +168,7 @@
   </header>
 </template>
 <script setup>
+import Logo from "./Logo.vue";
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -241,6 +236,7 @@ const changeLanguage = (languageCode) => {
   &__nav {
     width: 100%;
     margin: 0 auto;
+    position: relative;
 
     &__close-menu-btn {
       background-color: transparent;
@@ -257,7 +253,9 @@ const changeLanguage = (languageCode) => {
     }
 
     &__list {
-      position: relative;
+      position: absolute;
+      left: 0;
+      right: 0;
       top: -555px;
       display: flex;
       flex-direction: column;
@@ -286,7 +284,11 @@ const changeLanguage = (languageCode) => {
       }
 
       &--open {
-        top: 0;
+        top: 93px;
+
+        @media (min-width: $sm-screen) {
+          top: 110px;
+        }
       }
 
       &__element {
@@ -450,23 +452,6 @@ const changeLanguage = (languageCode) => {
             color: #ffffff;
           }
         }
-      }
-    }
-  }
-
-  &__logo {
-    text-decoration: none;
-    text-align: center;
-    font-size: 22px;
-    line-height: 26px;
-    color: #000;
-    font-family: "Caudex", serif;
-
-    &__image {
-      width: 200px;
-
-      @media (min-width: $sm-screen) {
-        width: 240px;
       }
     }
   }
