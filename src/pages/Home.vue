@@ -1,10 +1,10 @@
 <template>
-  <div class="home">{{ $t("navHome") }}</div>
+  <Slider />
+  <AboutSection />
 </template>
-<script setup></script>
+<script setup>
+import Slider from "../components/home/Slider.vue";
+import AboutSection from "../components/home/AboutSection.vue";
+</script>
 
-<style lang="scss">
-.home {
-  min-height: 100vh;
-}
-</style>
+<style lang="scss"></style>

@@ -198,6 +198,10 @@ const socialMediaLinks = [
           color: #000;
           cursor: pointer;
           font-weight: 400;
+
+          &:hover {
+            color: $primary-color;
+          }
         }
 
         &__link,

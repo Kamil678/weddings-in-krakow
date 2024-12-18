@@ -10,7 +10,11 @@ import Footer from "./components/shared/Footer.vue";
 
 <style lang="scss">
 #app {
-  margin-top: 150px;
+  margin-top: 94px;
   height: 100vh;
+
+  @media (min-width: $md-screen) {
+    margin-top: 111px;
+  }
 }
 </style>
