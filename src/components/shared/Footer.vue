@@ -2,107 +2,18 @@
   <footer class="footer">
     <div class="footer__contact-container">
       <div class="footer__contact-container__links">
-        <router-link to="/" class="footer__contact-container__links__link">{{
-          $t("navHome")
-        }}</router-link>
-        <router-link to="/" class="footer__contact-container__links__link">{{
-          $t("navOffer")
-        }}</router-link>
-        <router-link to="/" class="footer__contact-container__links__link">{{
-          $t("navProtfolio")
-        }}</router-link>
-        <router-link to="/" class="footer__contact-container__links__link">{{
-          $t("navOpinions")
-        }}</router-link>
-        <router-link to="/" class="footer__contact-container__links__link">{{
-          $t("navHumanistWeddings")
-        }}</router-link>
-        <router-link to="/" class="footer__contact-container__links__link">{{
-          $t("navWeddingDayCoordination")
-        }}</router-link>
-        <router-link to="/" class="footer__contact-container__links__link">{{
-          $t("navOfferHalls")
-        }}</router-link>
-        <router-link to="/" class="footer__contact-container__links__link">{{
-          $t("navContact")
-        }}</router-link>
-        <!-- <div class="footer__contact-container__info__data-container">
-          <div class="footer__contact-container__info__data-container__data">
-            <i
-              class="fa-regular fa-envelope footer__contact-container__info__data-container__data__icon"
-            ></i>
-            <a
-              href="mailto:kontakt.weddingfriends@gmail.com"
-              class="footer__contact-container__info__data-container__data__link"
-              >kontakt.weddingfriends@gmail.com</a
-            >
-          </div>
-          <div class="footer__contact-container__info__data-container__data">
-            <i
-              class="fa-solid fa-phone footer__contact-container__info__data-container__data__icon"
-            ></i>
-            <a
-              href="tel:+48603612175"
-              class="footer__contact-container__info__data-container__data__link"
-              >Magda: 603612175</a
-            >
-          </div>
-          <div class="footer__contact-container__info__data-container__data">
-            <i
-              class="fa-solid fa-phone footer__contact-container__info__data-container__data__icon"
-            ></i>
-            <a
-              href="tel:+48663316266"
-              class="footer__contact-container__info__data-container__data__link"
-              >Ewelina: 663316266</a
-            >
-          </div>
-          <div class="footer__contact-container__info__data-container__data">
-            <i
-              class="fa-solid fa-location-dot footer__contact-container__info__data-container__data__icon"
-            ></i>
-            <p
-              class="footer__contact-container__info__data-container__data__static"
-            >
-              32-200 Miechów ul. Partyzantów 59
-            </p>
-          </div>
-        </div> -->
+        <router-link
+          v-for="(link, index) in footerLinks"
+          :key="index"
+          :to="link.to"
+          class="footer__contact-container__links__link"
+        >
+          {{ $t(link.label) }}
+        </router-link>
       </div>
       <div class="footer__contact-container__logo-media">
         <Logo />
-        <div class="footer__contact-container__logo-media__items">
-          <a
-            href="https://www.facebook.com/weddingsinkrakow"
-            class="footer__contact-container__logo-media__items__item"
-          >
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/weddingsinkrakow/"
-            class="footer__contact-container__logo-media__items__item"
-          >
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a
-            href="https://pl.pinterest.com/weddingsinkrakow/"
-            class="footer__contact-container__logo-media__items__item"
-          >
-            <i class="fa-brands fa-pinterest"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/marta-w%C4%85tor-99b15225/"
-            class="footer__contact-container__logo-media__items__item"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UC-s-vZlIeG8Z5P02sc-0wOQ"
-            class="footer__contact-container__logo-media__items__item"
-          >
-            <i class="fa-brands fa-youtube"></i>
-          </a>
-        </div>
+        <SocialMediaLinks :links="socialMediaLinks" />
       </div>
       <div class="footer__contact-container__contact">
         <h4 class="footer__contact-container__contact__title">
@@ -152,6 +63,46 @@
 </template>
 <script setup>
 import Logo from "./Logo.vue";
+import SocialMediaLinks from "./SocialMediaLinks.vue";
+
+const footerLinks = [
+  { to: "/", label: "navHome" },
+  { to: "/offer", label: "navOffer" },
+  { to: "/portfolio", label: "navPortfolio" },
+  { to: "/opinions", label: "navOpinions" },
+  { to: "/humanist-weddings", label: "navHumanistWeddings" },
+  { to: "/wedding-day-coordination", label: "navWeddingDayCoordination" },
+  { to: "/offer-halls", label: "navOfferHalls" },
+  { to: "/contact", label: "navContact" },
+];
+
+const socialMediaLinks = [
+  {
+    href: "https://www.facebook.com/weddingsinkrakow",
+    icon: "fa-brands fa-facebook",
+    label: "Facebook",
+  },
+  {
+    href: "https://www.instagram.com/weddingsinkrakow/",
+    icon: "fa-brands fa-instagram",
+    label: "Instagram",
+  },
+  {
+    href: "https://pl.pinterest.com/weddingsinkrakow/",
+    icon: "fa-brands fa-pinterest",
+    label: "Pinterest",
+  },
+  {
+    href: "https://www.linkedin.com/in/marta-w%C4%85tor-99b15225/",
+    icon: "fa-brands fa-linkedin",
+    label: "LinkedIn",
+  },
+  {
+    href: "https://www.youtube.com/channel/UC-s-vZlIeG8Z5P02sc-0wOQ",
+    icon: "fa-brands fa-youtube",
+    label: "YouTube",
+  },
+];
 </script>
 
 <style lang="scss">
@@ -169,53 +120,17 @@ import Logo from "./Logo.vue";
     padding: 30px;
     gap: 30px;
 
-    @media (min-width: $lg-screen) {
-      flex-direction: row;
-      align-items: start;
-    }
-
     &__logo-media {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 30px;
-
-      &__items {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-
-        @media (min-width: $lg-screen) {
-          justify-content: flex-start;
-        }
-
-        &__item {
-          text-decoration: none;
-          color: $primary-color;
-          transform: translateY(0);
-
-          &:hover {
-            transform: translateY(-5px);
-          }
-
-          .fa-brands {
-            font-size: 30px;
-
-            @media (min-width: $lg-screen) {
-              font-size: 40px;
-            }
-          }
-        }
-      }
     }
 
-    &__links,
-    &__media {
+    &__links {
       padding: 0 30px;
       background-color: $gray-color;
-      width: fit-content;
     }
 
     &__links {
@@ -239,10 +154,8 @@ import Logo from "./Logo.vue";
     }
 
     &__contact {
-      min-width: 225px;
       display: flex;
       flex-direction: column;
-      align-items: ce;
       gap: 20px;
 
       &__title {
@@ -294,6 +207,11 @@ import Logo from "./Logo.vue";
         }
       }
     }
+
+    @media (min-width: $lg-screen) {
+      flex-direction: row;
+      align-items: start;
+    }
   }
 
   &__copyright-container {
@@ -305,6 +223,7 @@ import Logo from "./Logo.vue";
     background-color: $primary-color;
     padding: 20px;
     font-size: 12px;
+    color: #fff;
 
     &__text {
       text-align: center;
