@@ -72,6 +72,7 @@ const navLinks = [
   width: 100%;
   z-index: 9999;
   background-color: #fff;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
   &__nav {
     width: 100%;

@@ -1,5 +1,10 @@
 {
   "welcome": "Willkommen",
   "about": "Über uns",
-  "contact": "Kontakt"
+  "contact": "Kontakt",
+  "homeAboutWelcome": "Hallo! Mein Name ist Marta Wątor",
+  "homeAboutText1": " Hochzeiten, Fremdsprachen und Organisation sind meine Leidenschaften, deshalb habe ich beschlossen, sie zu kombinieren und <span>„Weddings in Krakow“<span> zu organisieren.",
+  "homeAboutText2": "ch liebe Menschen und erschaffe erstaunliche Dinge für sie. Es mag trivial klingen, aber Empathie und Professionalität sind meine zweiten Vornamen.",
+  "homeAboutText3": "Wenn Sie Inspiration, Unterstützung oder den kleinsten Rat suchen – zögern Sie nicht und schreiben Sie. Wir finden garantiert die perfekte Lösung!",
+  "homeAboutContactBtn": "Kontaktieren Sie mich"
 }
