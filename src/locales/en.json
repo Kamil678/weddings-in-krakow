@@ -1,15 +1,19 @@
 {
   "navHome": "Home",
   "navOffer": "Offer",
-  "navHumanistWeddings": "Śluby humanistyczne",
-  "navWeddingDayCoordination": "Koordynacja dnia ślubu",
+  "navHumanistWeddings": "Humanist weddings",
+  "navWeddingDayCoordination": "Wedding day coordination",
   "navPortfolio": "Portfolio",
   "navOpinions": "Opinions",
-  "navOfferHalls": "Oferta dla sal",
-  "navContact": "Kontakt",
+  "navOfferHalls": "Offer for halls",
+  "navContact": "Contact",
   "homeAboutWelcome": "Hi! My name is Marta Wątor",
   "homeAboutText1": "Weddings, foreign languages ​​and organization are my passions, so I decided to combine them and create <span>Weddings in Krakow<span>.",
   "homeAboutText2": "I love people and creating amazing things for them. It may sound trivial, but empathy and professionalism are my middle names.",
   "homeAboutText3": "If you are looking for inspiration, support, the smallest piece of advice - do not hesitate and write. We will definitely find the perfect solution!",
-  "homeAboutContactBtn": "Contact me"
+  "homeAboutContactBtn": "Contact me",
+  "homeBasicOfferTitle": "What do I offer?",
+  "homeBasicOfferText1": "My offer includes: comprehensive and partial wedding organization, coordination of the wedding day, translations during the ceremony, wedding consultations, LAST MINUTE wedding and selection of subcontractors. The prices of my services are not fixed, so first I invite the future Bride and Groom to a conversation during which we determine the expected scope of my tasks. On this basis I am able to determine the total amount of the service. After signing the contract, we go straight to work!",
+  "homeBasicOfferText2": "You can find a detailed description of the services along with estimated prices in the „Offer” tab. I also invite you to familiarize yourself with my portfolio, videos on YouTube and other Social Media channels, thanks to which you will get to know me and my style of work even better!",
+  "homeBasicOfferButton": "Check offer"
 }

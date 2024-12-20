@@ -1,10 +1,19 @@
 {
-  "welcome": "Bienvenue",
-  "about": "À propos de nous",
-  "contact": "Contactez-nous",
+  "navHome": "Maison",
+  "navOffer": "Offre",
+  "navHumanistWeddings": "Mariages humanistes",
+  "navWeddingDayCoordination": "Coordination du jour du mariage",
+  "navPortfolio": "Portefeuille",
+  "navOpinions": "Avis",
+  "navOfferHalls": "Offre pour les chambres",
+  "navContact": "Contact",
   "homeAboutWelcome": "Salut! Je m'appelle Marta Wątor",
   "homeAboutText1": "Les mariages, les langues étrangères et l'organisation sont mes passions, j'ai donc décidé de les combiner et de créer <span>„Weddings in Krakow“<span>.",
   "homeAboutText2": "J'aime les gens et je crée des choses incroyables pour eux. Cela peut paraître anodin, mais l'empathie et le professionnalisme sont mes deuxièmes prénoms.",
   "homeAboutText3": "Si vous cherchez de l'inspiration, du soutien, le moindre conseil, n'hésitez pas et écrivez. Nous trouverons certainement la solution parfaite!",
-  "homeAboutContactBtn": "Contactez-moi"
+  "homeAboutContactBtn": "Contactez-moi",
+  "homeBasicOfferTitle": "Ce que je propose?",
+  "homeBasicOfferText1": "Mon offre comprend : l'organisation complète et partielle du mariage, la coordination du jour du mariage, les traductions pendant la cérémonie, les consultations de mariage, les mariages de LAST MINUTE et la sélection des sous-traitants. Les prix de mes prestations ne sont pas fixes, j'invite donc tout d'abord les futurs mariés à une conversation au cours de laquelle nous déterminons l'ampleur attendue de mes tâches. Sur cette base, je suis en mesure de déterminer le montant total de la prestation. Après avoir signé le contrat, nous passons directement à l’action !",
+  "homeBasicOfferText2": "Une description détaillée des prestations ainsi que les prix estimés sont disponibles dans l'onglet « Offre ». Je vous invite également à consulter mon portfolio, mes vidéos sur YouTube et d'autres réseaux sociaux, grâce auxquels vous apprendrez encore mieux à me connaître et à mieux connaître mon style de travail!",
+  "homeBasicOfferButton": "Consultez l'offre"
 }

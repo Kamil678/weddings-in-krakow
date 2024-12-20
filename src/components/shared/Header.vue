@@ -107,9 +107,9 @@ const navLinks = [
       background-color: $primary-color;
       padding: 1rem;
       transition: top 0.3s ease-out, transform 0.3s ease-out;
-      background-color: rgba(161, 109, 139, 0.6);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      // background-color: rgba(161, 109, 139, 0.6);
+      // backdrop-filter: blur(10px);
+      // -webkit-backdrop-filter: blur(10px);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       color: white;
 

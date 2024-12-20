@@ -27,7 +27,7 @@ import Button from "../shared/Button.vue";
 
 <style lang="scss">
 .about {
-  padding: 150px 50px;
+  padding: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,6 +115,10 @@ import Button from "../shared/Button.vue";
       flex-direction: row;
       padding: 0;
     }
+  }
+
+  @media (min-width: $md-screen) {
+    padding: 150px 50px;
   }
 }
 </style>

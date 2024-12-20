@@ -1,48 +1,55 @@
 <template>
   <section class="basic-offer">
     <div class="basic-offer__container">
-      <div class="basic-offer__container__content">
-        <h2>Co oferuję?</h2>
-        <p>
-          W mojej ofercie znajdują się: kompleksowa i częściowa organizacja
-          ślubu, koordynacja dnia ślubu, tłumaczenia podczas uroczystości,
-          konsultacje ślubne, ślub LAST MINUTE oraz typowanie podwykonawców.
-          Ceny moich usług nie są sztywne, dlatego w pierwszej kolejności
-          zapraszam przyszłą Parę Młodą na rozmowę, podczas której ustalamy
-          oczekiwany zakres moich zadań. Na tej podstawie jestem w stanie
-          określić całkowitą kwotę usługi. Po podpisaniu umowy przechodzimy
-          prosto do działania! Dokładny opis usług wraz z szacunkowymi cenami
-          możecie znaleźć w zakładce „Oferta”. Zapraszam również do zapoznania
-          się z moim portfolio, filmami na Youtube oraz innymi kanałami Social
-          Media, dzięki którym poznacie mnie i mój styl pracy jeszcze lepiej!
-        </p>
-      </div>
-      <div class="basic-offer__container__image-container">
-        <div class="basic-offer__container__image-container__image">
+      <h2>{{ $t("homeBasicOfferTitle") }}</h2>
+      <div class="basic-offer__container__box">
+        <div class="basic-offer__container__box__image">
           <img
             src="../../assets/home/basic-offer-image-1.webp"
             alt="The newlyweds"
           />
         </div>
-        <div class="basic-offer__container__image-container__image">
+        <div class="basic-offer__container__box__content">
+          <p>
+            {{ $t("homeBasicOfferText1") }}
+          </p>
+        </div>
+      </div>
+      <div
+        class="basic-offer__container__box basic-offer__container__box--second"
+      >
+        <div class="basic-offer__container__box__content">
+          <p>
+            {{ $t("homeBasicOfferText2") }}
+          </p>
+        </div>
+        <div class="basic-offer__container__box__image">
           <img
             src="../../assets/home/basic-offer-image-2.webp"
             alt="The newlyweds"
           />
         </div>
       </div>
+      <Button
+        :text="$t('homeBasicOfferButton')"
+        href="/offer"
+        class="basic-offer__container__button"
+      />
     </div>
   </section>
 </template>
-<script setup></script>
+<script setup>
+import Button from "../shared/Button.vue";
+</script>
 
 <style lang="scss">
 .basic-offer {
-  padding: 100px 3rem;
+  padding: 0 3rem 3rem 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  //background-color: $primary-color;
+  max-width: 1800px;
+  margin: 0 auto;
 
   &__container {
     display: flex;
@@ -51,42 +58,107 @@
     justify-content: center;
     gap: 50px;
 
-    &__content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 50px;
-      color: #000;
-      padding: 0 100px;
+    h2 {
+      font-family: "Cormorant Upright", serif;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 44px;
+      margin-bottom: 0;
 
-      h2 {
-        font-family: "Cormorant Upright", serif;
-        font-weight: 700;
+      @media (min-width: $md-screen) {
         font-size: 50px;
         line-height: 54px;
-      }
-
-      p {
-        font-size: 18px;
-        line-height: 26px;
+        margin-bottom: 50px;
       }
     }
 
-    &__image-container {
+    &__box {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-around;
-      gap: 100px;
+      justify-content: space-between;
+      gap: 30px;
+
+      &--second {
+        flex-direction: column-reverse;
+      }
 
       &__image {
-        width: 40%;
+        width: 100%;
+        padding: 0;
         img {
           width: 100%;
           border-radius: 10px;
         }
+
+        @media (min-width: $md-screen) {
+          padding: 0 50px;
+        }
+
+        @media (min-width: $lg-screen) {
+          width: 50%;
+          text-align: left;
+          padding: 0;
+        }
+      }
+
+      &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: #000;
+        padding: 0;
+
+        p {
+          font-size: 16px;
+          line-height: 22px;
+
+          @media (min-width: $md-screen) {
+            font-size: 18px;
+            line-height: 24px;
+          }
+
+          @media (min-width: $xl-screen) {
+            font-size: 20px;
+            line-height: 26px;
+          }
+        }
+
+        @media (min-width: $md-screen) {
+          padding: 0 50px;
+        }
+
+        @media (min-width: $lg-screen) {
+          width: 50%;
+          text-align: left;
+          padding: 0;
+        }
+      }
+
+      @media (min-width: $lg-screen) {
+        flex-direction: row;
+        gap: 50px;
+        margin-top: 0;
+      }
+
+      @media (min-width: $xl-screen) {
+        gap: 100px;
       }
     }
+
+    &__button {
+      margin-top: 0;
+
+      @media (min-width: $md-screen) {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  @media (min-width: $md-screen) {
+    padding: 0 3rem 6.25rem 3rem;
   }
 }
 </style>

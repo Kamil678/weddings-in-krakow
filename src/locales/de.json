@@ -1,10 +1,19 @@
 {
-  "welcome": "Willkommen",
-  "about": "Über uns",
-  "contact": "Kontakt",
+  "navHome": "Heim",
+  "navOffer": "Angebot",
+  "navHumanistWeddings": "Humanistische Hochzeiten",
+  "navWeddingDayCoordination": "Koordination des Hochzeitstages",
+  "navPortfolio": "Portfolio",
+  "navOpinions": "Meinungen",
+  "navOfferHalls": "Angebot für Zimmer",
+  "navContact": "Kontakt",
   "homeAboutWelcome": "Hallo! Mein Name ist Marta Wątor",
   "homeAboutText1": " Hochzeiten, Fremdsprachen und Organisation sind meine Leidenschaften, deshalb habe ich beschlossen, sie zu kombinieren und <span>„Weddings in Krakow“<span> zu organisieren.",
-  "homeAboutText2": "ch liebe Menschen und erschaffe erstaunliche Dinge für sie. Es mag trivial klingen, aber Empathie und Professionalität sind meine zweiten Vornamen.",
+  "homeAboutText2": "Ich liebe Menschen und erschaffe erstaunliche Dinge für sie. Es mag trivial klingen, aber Empathie und Professionalität sind meine zweiten Vornamen.",
   "homeAboutText3": "Wenn Sie Inspiration, Unterstützung oder den kleinsten Rat suchen – zögern Sie nicht und schreiben Sie. Wir finden garantiert die perfekte Lösung!",
-  "homeAboutContactBtn": "Kontaktieren Sie mich"
+  "homeAboutContactBtn": "Kontaktieren Sie mich",
+  "homeBasicOfferTitle": "Was ich anbiete?",
+  "homeBasicOfferText1": "Mein Angebot umfasst: umfassende und teilweise Hochzeitsorganisation, Koordination am Hochzeitstag, Übersetzungen während der Zeremonie, Hochzeitsberatung, LAST-MINUTE-Hochzeiten und Auswahl von Subunternehmern. Da die Preise für meine Leistungen nicht festgelegt sind, lade ich das zukünftige Brautpaar zunächst zu einem Gespräch ein, bei dem wir den voraussichtlichen Umfang meiner Aufgaben festlegen. Auf dieser Grundlage kann ich den Gesamtbetrag der Leistung ermitteln. Nach der Vertragsunterzeichnung geht es direkt zur Tat!",
+  "homeBasicOfferText2": "Eine detaillierte Beschreibung der Leistungen sowie voraussichtliche Preise finden Sie im Reiter „Angebot“. Ich lade Sie außerdem ein, sich mein Portfolio und meine Videos auf YouTube und anderen Social-Media-Kanälen anzuschauen, damit Sie mich und meinen Arbeitsstil noch besser kennenlernen!",
+  "homeBasicOfferButton": "Mehr sehen"
 }
