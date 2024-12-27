@@ -192,6 +192,7 @@ const navLinks = [
 
     &__buttons-wrap {
       display: flex;
+      flex-direction: row-reverse;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
@@ -202,6 +203,10 @@ const navLinks = [
 
       @media (min-width: $md-screen) {
         padding: 0 3rem;
+      }
+
+      @media (min-width: $sm-screen) {
+        flex-direction: row;
       }
 
       &__mobile-menu-btn {
