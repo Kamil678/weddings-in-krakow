@@ -8,7 +8,7 @@
         </p>
       </div>
       <img
-        src="../assets/humanist-weddings/humanist-weddings-header.jpeg"
+        src="../assets/humanist-weddings/humanist-weddings-header.jpg"
         class="hummanist-weddings__header__image"
       />
     </div>
