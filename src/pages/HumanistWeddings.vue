@@ -33,6 +33,11 @@
           <img src="../assets/humanist-weddings/humanist-weddings-faq.jpg" />
         </div>
       </div>
+      <Button
+        :text="$t('navContact')"
+        href="/contact"
+        class="hummanist-weddings__section--faq-container__btn"
+      />
     </div>
     <div
       class="hummanist-weddings__section hummanist-weddings__section--realizations"
@@ -59,6 +64,7 @@
 </template>
 <script setup>
 import Question from "../components/humanist-weddings/Question.vue";
+import Button from "../components/shared/Button.vue";
 import { useI18n } from "vue-i18n";
 import { computed, ref } from "vue";
 
@@ -460,6 +466,10 @@ const toggleQuestion = (index) => {
     }
 
     &--faq-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
       &__faq {
         display: flex;
         align-items: flex-start;
@@ -492,6 +502,10 @@ const toggleQuestion = (index) => {
             display: block;
           }
         }
+      }
+
+      &__btn {
+        margin-top: 50px;
       }
     }
 

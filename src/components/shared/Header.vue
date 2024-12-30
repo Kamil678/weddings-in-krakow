@@ -31,6 +31,7 @@
           v-for="(link, index) in navLinks"
           :key="index"
           class="header__nav__list__element"
+          @click="openMenu = !openMenu"
         >
           <router-link
             :to="link.path"
@@ -39,6 +40,7 @@
             >{{ $t(link.label) }}</router-link
           >
         </li>
+        <LanguageDropdown class="dropdown--small-screen" small-screen />
       </ul>
     </nav>
   </header>

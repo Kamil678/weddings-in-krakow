@@ -9,12 +9,20 @@
       {{ currentLanguage.label }}
       <span class="dropdown__button__arrow">
         <img
-          v-if="isOpenChangeLanguageMenu"
+          v-if="isOpenChangeLanguageMenu && !smallScreen"
           src="../../assets/shared/chevron-up-ico.svg"
         />
         <img
-          v-if="!isOpenChangeLanguageMenu"
+          v-if="isOpenChangeLanguageMenu && smallScreen"
+          src="../../assets/shared/chevron-up-ico-white.svg"
+        />
+        <img
+          v-if="!isOpenChangeLanguageMenu && !smallScreen"
           src="../../assets/shared/chevron-down-ico.svg"
+        />
+        <img
+          v-if="!isOpenChangeLanguageMenu && smallScreen"
+          src="../../assets/shared/chevron-down-ico-white.svg"
         />
       </span>
     </button>
@@ -37,10 +45,17 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, defineProps } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { locale } = useI18n();
+
+const props = defineProps({
+  smallScreen: {
+    type: Boolean,
+    deafult: false,
+  },
+});
 
 const languages = [
   {
@@ -105,6 +120,20 @@ const changeLanguage = (languageCode) => {
     @media (min-width: $sm-screen) {
       display: none;
     }
+
+    .dropdown__button {
+      padding: 0 !important;
+      color: #fff !important;
+
+      .dropdown__button__arrow {
+        color: #fff !important;
+      }
+    }
+
+    .dropdown__menu {
+      min-width: 90px;
+      color: #000;
+    }
   }
 
   &__button {
@@ -115,11 +144,6 @@ const changeLanguage = (languageCode) => {
     border-radius: 4px;
     cursor: pointer;
     display: flex;
-
-    &--small-screen {
-      padding: 0;
-      color: #fff;
-    }
 
     &__img-flag {
       margin-right: 10px;
