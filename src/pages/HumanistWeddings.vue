@@ -475,8 +475,7 @@ const toggleQuestion = (index) => {
         align-items: flex-start;
         justify-content: space-between;
         gap: 50px;
-        max-width: 1400px;
-        margin: 0 auto;
+        width: 100%;
 
         &__questions {
           display: flex;
@@ -501,6 +500,12 @@ const toggleQuestion = (index) => {
           @media (min-width: $lg-screen) {
             display: block;
           }
+        }
+
+        @media (min-width: $lg-screen) {
+          width: auto;
+          max-width: 1400px;
+          margin: 0 auto;
         }
       }
 
