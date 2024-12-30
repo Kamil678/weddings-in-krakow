@@ -7,7 +7,7 @@
         <i v-if="active" class="fa-solid fa-minus"></i>
       </button>
     </div>
-    <div v-if="active" class="question-container__answer">
+    <div v-show="active" class="question-container__answer">
       <p>{{ question.answer }}</p>
     </div>
   </div>
