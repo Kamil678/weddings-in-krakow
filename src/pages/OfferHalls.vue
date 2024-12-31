@@ -50,7 +50,7 @@ const offers = [
     font-weight: 700;
     font-size: 40px;
     line-height: 44px;
-    padding: 50px 0 100px 0;
+    padding: 100px 0;
     text-align: center;
 
     @media (min-width: $md-screen) {

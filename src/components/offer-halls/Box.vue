@@ -16,11 +16,20 @@
         {{ offer.content }}
       </p>
     </div>
+    <div class="box__more-info">
+      <p class="box__more-info__text">Chcesz dowiedzieć się więcej?</p>
+      <Button
+        text="Skontaktuj się"
+        href="/contact"
+        class="box__more-info__btn"
+      />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { defineProps } from "vue";
+import Button from "../shared/Button.vue";
 
 const props = defineProps({
   offer: {
@@ -39,6 +48,14 @@ const props = defineProps({
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .box__more-info {
+      bottom: 0;
+    }
+  }
 
   &__header {
     display: flex;
@@ -116,6 +133,42 @@ const props = defineProps({
       text-align: center;
       font-size: 16px;
       line-height: 22px;
+
+      @media (min-width: $md-screen) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+      @media (min-width: $xl-screen) {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  &__more-info {
+    position: absolute;
+    width: 100%;
+    bottom: -100%;
+    left: 0;
+    background-color: rgba(161, 109, 139, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: transform 0.2s ease, bottom 0.2s ease;
+
+    &__text {
+      text-align: center;
+      font-size: 16px;
+      line-height: 22px;
+      color: #fff;
 
       @media (min-width: $md-screen) {
         font-size: 18px;

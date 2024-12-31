@@ -28,15 +28,15 @@
         class="header__nav__list"
       >
         <li
-          v-for="(link, index) in navLinks"
+          v-for="(link, index) in filteredNavLinks"
           :key="index"
           class="header__nav__list__element"
-          @click="openMenu = !openMenu"
         >
           <router-link
             :to="link.path"
             class="header__nav__list__link"
             active-class="active"
+            @click="openMenu = !openMenu"
             >{{ $t(link.label) }}</router-link
           >
         </li>
@@ -47,13 +47,14 @@
 </template>
 <script setup>
 import Logo from "./Logo.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import LanguageDropdown from "./LanguageDropdown.vue";
 
 const openMenu = ref(false);
 
 const { locale, t } = useI18n();
+console.log(locale.value);
 const navLinks = [
   { path: "/", label: "navHome" },
   { path: "/offer", label: "navOffer" },
@@ -64,6 +65,14 @@ const navLinks = [
   { path: "/offer-halls", label: "navOfferHalls" },
   { path: "/contact", label: "navContact" },
 ];
+
+const filteredNavLinks = computed(() => {
+  if (locale.value === "pl") {
+    return navLinks;
+  }
+
+  return navLinks.filter((link) => link.path !== "/offer-halls");
+});
 </script>
 
 <style lang="scss">
