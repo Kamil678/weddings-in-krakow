@@ -66,4 +66,14 @@ const router = createRouter({
   },
 });
 
+router.beforeEach((to, from, next) => {
+  const selectedLanguage = localStorage.getItem("language");
+
+  if (to.path === "/offer-halls" && selectedLanguage !== "pl") {
+    return next({ path: "/" });
+  }
+
+  next();
+});
+
 export default router;

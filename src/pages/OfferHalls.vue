@@ -50,12 +50,13 @@ const offers = [
     font-weight: 700;
     font-size: 40px;
     line-height: 44px;
-    padding: 100px 0;
+    padding: 50px 0;
     text-align: center;
 
     @media (min-width: $md-screen) {
       font-size: 50px;
       line-height: 54px;
+      padding: 100px 0;
     }
   }
 
