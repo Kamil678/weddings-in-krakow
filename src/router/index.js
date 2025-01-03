@@ -67,7 +67,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const selectedLanguage = localStorage.getItem("language");
+  const selectedLanguage = localStorage.getItem("language") || "pl";
 
   if (to.path === "/offer-halls" && selectedLanguage !== "pl") {
     return next({ path: "/" });
