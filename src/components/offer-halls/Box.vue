@@ -11,18 +11,26 @@
       </div>
       <h3 class="box__header__title">{{ offer.title }}</h3>
     </div>
+    <div class="box__image">
+      <img :src="offer.img" :alt="offer.title" />
+    </div>
     <div class="box__content">
       <p class="box__content__text">
         {{ offer.content }}
       </p>
     </div>
     <div class="box__more-info">
-      <p class="box__more-info__text">Chcesz dowiedzieć się więcej?</p>
-      <Button
-        text="Skontaktuj się"
-        href="/contact"
+      <p class="box__more-info__text">
+        Chcesz dowiedzieć się więcej? Sprawdź pełną ofertę
+      </p>
+      <a
+        href="/public/oferta-dla-sal.pdf"
+        target="_blank"
         class="box__more-info__btn"
-      />
+      >
+        <i class="fa-solid fa-download"></i>
+        Pełna oferta
+      </a>
     </div>
   </div>
 </template>
@@ -126,8 +134,22 @@ const props = defineProps({
     }
   }
 
+  &__image {
+    width: 100%;
+    padding: 30px;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    @media (min-width: $md-screen) {
+      padding: 50px 30px 30px 30px;
+    }
+  }
+
   &__content {
-    padding: 50px 30px;
+    padding: 0 30px 30px 30px;
 
     &__text {
       text-align: center;
@@ -137,6 +159,7 @@ const props = defineProps({
       @media (min-width: $md-screen) {
         font-size: 18px;
         line-height: 24px;
+        padding: 0 30px 50px 30px;
       }
 
       @media (min-width: $xl-screen) {
@@ -178,6 +201,36 @@ const props = defineProps({
       @media (min-width: $xl-screen) {
         font-size: 20px;
         line-height: 26px;
+      }
+    }
+
+    &__btn {
+      display: block;
+      border: none;
+      background-color: $primary-color;
+      width: fit-content;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 18px;
+      line-height: 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      color: #fff;
+
+      .fa-solid {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      @media (min-width: $md-screen) {
+        font-size: 20px;
+        line-height: 22px;
+        padding: 20px 30px;
       }
     }
   }

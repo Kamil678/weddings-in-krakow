@@ -54,7 +54,7 @@ import LanguageDropdown from "./LanguageDropdown.vue";
 const openMenu = ref(false);
 
 const { locale, t } = useI18n();
-console.log(locale.value);
+
 const navLinks = [
   { path: "/", label: "navHome" },
   { path: "/offer", label: "navOffer" },
