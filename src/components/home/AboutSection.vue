@@ -54,7 +54,7 @@ import Button from "../shared/Button.vue";
       text-align: center;
 
       h1 {
-        font-family: "Cormorant Upright", serif;
+        font-family: "Domine", serif;
         font-weight: 700;
         font-size: 44px;
         line-height: 50px;
@@ -118,7 +118,7 @@ import Button from "../shared/Button.vue";
   }
 
   @media (min-width: $md-screen) {
-    padding: 150px 50px;
+    padding: $sectionSpace 50px;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="offer-halls">
+  <section class="page offer-halls">
     <h2 class="offer-halls__title">Oferta dla sal</h2>
     <div class="offer-halls__boxes">
       <Box v-for="offer in offers" :offer="offer" :key="offer.number" />
@@ -56,22 +56,21 @@ const offers = [
 <style lang="scss">
 .offer-halls {
   &__title {
-    font-family: "Cormorant Upright", serif;
+    font-family: "Domine", serif;
     font-weight: 700;
     font-size: 40px;
     line-height: 44px;
-    padding: 50px 0;
+    margin-bottom: 50px;
     text-align: center;
 
     @media (min-width: $md-screen) {
       font-size: 50px;
       line-height: 54px;
-      padding: 100px 0;
+      margin-bottom: 100px;
     }
   }
 
   &__boxes {
-    margin: 0 20px 100px 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 50px;
@@ -87,10 +86,6 @@ const offers = [
 
     @media (min-width: $xxxl-screen) {
       grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-    }
-
-    @media (min-width: $lg-screen) {
-      margin: 0 3rem 6.25rem 3rem;
     }
   }
 }

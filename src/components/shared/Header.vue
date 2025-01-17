@@ -216,6 +216,10 @@ const filteredNavLinks = computed(() => {
         padding: 0 3rem;
       }
 
+      @media (min-width: $xl-screen) {
+        padding: 0 4.5rem;
+      }
+
       @media (min-width: $sm-screen) {
         flex-direction: row;
       }

@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,4 +6,16 @@
 
 body {
   font-family: "Roboto", sans-serif;
+}
+
+.page {
+  padding: 3.125rem 1.5rem;
+
+  @media (min-width: $md-screen) {
+    padding: $sectionSpace 3rem;
+  }
+
+  @media (min-width: $xl-screen) {
+    padding: $sectionSpace 4.5rem;
+  }
 }

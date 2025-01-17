@@ -59,11 +59,12 @@ import Button from "../shared/Button.vue";
     gap: 50px;
 
     h2 {
-      font-family: "Cormorant Upright", serif;
+      font-family: "Domine", serif;
       font-weight: 700;
       font-size: 40px;
       line-height: 44px;
       margin-bottom: 0;
+      text-align: center;
 
       @media (min-width: $md-screen) {
         font-size: 50px;
@@ -147,18 +148,10 @@ import Button from "../shared/Button.vue";
         gap: 100px;
       }
     }
-
-    &__button {
-      margin-top: 0;
-
-      @media (min-width: $md-screen) {
-        margin-top: 50px;
-      }
-    }
   }
 
   @media (min-width: $md-screen) {
-    padding: 0 3rem 6.25rem 3rem;
+    padding: 0 3rem $sectionSpace 3rem;
   }
 }
 </style>

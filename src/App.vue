@@ -13,7 +13,7 @@ import Footer from "./components/shared/Footer.vue";
   margin-top: 94px;
   height: 100vh;
 
-  @media (min-width: $md-screen) {
+  @media (min-width: $sm-screen) {
     margin-top: 111px;
   }
 }

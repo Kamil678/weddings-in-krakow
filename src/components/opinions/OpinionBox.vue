@@ -1,0 +1,216 @@
+<template>
+  <div
+    class="opinion-box"
+    :class="[
+      opinion.id % 2 !== 0
+        ? 'opinion-box--reverse opinion-box--slide-right'
+        : 'opinion-box--slide-left',
+    ]"
+  >
+    <div class="opinion-box__image-container">
+      <img :src="opinion.img" :alt="`Photo ${opinion.name}`" />
+    </div>
+    <div class="opinion-box__content-container">
+      <p class="opinion-box__content-container__content">
+        {{
+          showFullText[opinion.id]
+            ? opinion.content
+            : truncatedContent(opinion.content)
+        }}
+      </p>
+      <button
+        v-if="opinion.content.length > getTruncateLength()"
+        @click="toggleText(opinion.id)"
+        class="opinion-box__content-container__show-more-button"
+      >
+        {{
+          showFullText[opinion.id]
+            ? `${$t("opinionsSeeLess")}`
+            : `${$t("opinionsSeeMore")}`
+        }}
+      </button>
+      <p class="opinion-box__content-container__name">
+        {{ opinion.name }}
+      </p>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { defineProps, ref } from "vue";
+
+const props = defineProps({
+  opinion: {
+    type: Object,
+    required: true,
+  },
+});
+
+const showFullText = ref({});
+
+function getTruncateLength() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 992) {
+    return 700;
+  }
+  return 1500;
+}
+
+function truncatedContent(content) {
+  const truncateLength = getTruncateLength();
+  return content.length > truncateLength
+    ? content.slice(0, truncateLength) + "..."
+    : content;
+}
+
+function toggleText(opinionId) {
+  showFullText.value[opinionId] = !showFullText.value[opinionId];
+}
+</script>
+
+<style lang="scss">
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.opinion-box {
+  max-width: $xxl-screen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px 100px;
+  margin: 0 auto;
+  padding: 50px 0;
+  border-bottom: 3px solid $primary-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &--reverse {
+    flex-direction: column;
+
+    @media (min-width: $xl-screen) {
+      flex-direction: row-reverse !important;
+    }
+  }
+
+  &--slide-in {
+    animation: 0.8s ease-out both;
+  }
+
+  &--slide-left {
+    animation: 0.8s ease-out both;
+    animation-name: slide-in-left;
+  }
+
+  &--slide-right {
+    animation: 0.8s ease-out both;
+    animation-name: slide-in-right;
+  }
+
+  &__image-container {
+    width: 100%;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    @media (min-width: $md-screen) {
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    @media (min-width: $xl-screen) {
+      width: 50%;
+    }
+  }
+
+  &__content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__content {
+      text-align: center;
+      font-size: 16px;
+      line-height: 22px;
+
+      @media (min-width: $md-screen) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+
+    &__name {
+      font-family: "Domine", serif;
+      font-size: 26px;
+      line-height: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    &__show-more-button {
+      display: block;
+      border: none;
+      background-color: $primary-color;
+      width: fit-content;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      line-height: 20px;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      color: #fff;
+      margin-top: 30px;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      @media (min-width: $md-screen) {
+        font-size: 20px;
+        line-height: 22px;
+        padding: 15px 20px;
+      }
+    }
+
+    @media (min-width: $md-screen) {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    @media (min-width: $xl-screen) {
+      width: 50%;
+    }
+  }
+
+  @media (min-width: $xl-screen) {
+    flex-direction: row;
+    padding: 100px 30px;
+  }
+}
+</style>
