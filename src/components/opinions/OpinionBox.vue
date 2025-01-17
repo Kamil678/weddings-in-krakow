@@ -12,22 +12,15 @@
     </div>
     <div class="opinion-box__content-container">
       <p class="opinion-box__content-container__content">
-        {{
-          showFullText[opinion.id]
-            ? opinion.content
-            : truncatedContent(opinion.content)
-        }}
+        {{ active ? opinion.content : truncatedContent(opinion.content) }}
       </p>
       <button
-        v-if="opinion.content.length > getTruncateLength()"
-        @click="toggleText(opinion.id)"
+        type="button"
+        v-if="opinion.content.length > 1000"
+        @click="toggle"
         class="opinion-box__content-container__show-more-button"
       >
-        {{
-          showFullText[opinion.id]
-            ? `${$t("opinionsSeeLess")}`
-            : `${$t("opinionsSeeMore")}`
-        }}
+        {{ active ? `${$t("opinionsSeeLess")}` : `${$t("opinionsSeeMore")}` }}
       </button>
       <p class="opinion-box__content-container__name">
         {{ opinion.name }}
@@ -37,35 +30,35 @@
 </template>
 
 <script setup>
-import { defineProps, ref } from "vue";
+import { defineProps } from "vue";
 
 const props = defineProps({
   opinion: {
     type: Object,
     required: true,
   },
+  index: {
+    type: Number,
+    required: true,
+  },
+  active: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-const showFullText = ref({});
-
-function getTruncateLength() {
-  const screenWidth = window.innerWidth;
-  if (screenWidth < 992) {
-    return 700;
-  }
-  return 1500;
-}
-
 function truncatedContent(content) {
-  const truncateLength = getTruncateLength();
+  const truncateLength = 1000;
   return content.length > truncateLength
     ? content.slice(0, truncateLength) + "..."
     : content;
 }
 
-function toggleText(opinionId) {
-  showFullText.value[opinionId] = !showFullText.value[opinionId];
-}
+const emit = defineEmits(["toggle"]);
+
+const toggle = () => {
+  emit("toggle", props.index);
+};
 </script>
 
 <style lang="scss">

@@ -3,14 +3,18 @@
     <h2 class="opinions__title">{{ $t("navOpinions") }}</h2>
     <div class="opinions__boxes">
       <OpinionBox
-        v-for="opinion in opinions"
+        v-for="(opinion, index) in opinions"
         :key="opinion.id"
         :opinion="opinion"
+        :index="index"
+        :active="activeOpinion === index"
+        @toggle="toggleText(index)"
       />
     </div>
   </section>
 </template>
 <script setup>
+import { ref } from "vue";
 import OpinionBox from "../components/opinions/OpinionBox.vue";
 
 const opinions = [
@@ -176,6 +180,12 @@ const opinions = [
       "I reached out to Marta 15 months in advance of our wedding. She works very fast to identify possible vendors and venues to enable decision making, where we had our main contracts locked in within the first 4 months of planning. With Marta, no is not an option - any idea is followed with options for execution. She is your partner since day 1. 80% of our guests were flying into Poland from the USA and have said that this is the best wedding that they have attended. I'm fortunate to not only have worked with a resourceful and well organized planner that has made planning a wedding from across the Atlantic a breeze, but also to walk away a new life time friend in Krakow. Highly recommend working with her!",
   },
 ];
+
+const activeOpinion = ref(null);
+
+const toggleText = (index) => {
+  activeOpinion.value = activeOpinion.value === index ? null : index;
+};
 </script>
 
 <style lang="scss">
