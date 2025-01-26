@@ -4,7 +4,7 @@
     <div class="offers__container">
       <OfferCard
         :title="$t('offer1Title')"
-        imageSrc="../src/assets/offer/offer-1.jpeg"
+        :imageSrc="image"
         imageAlt="Table prepared for a wedding"
       >
         <ul>
@@ -26,7 +26,7 @@
       </OfferCard>
       <OfferCard
         :title="$t('offer2Title')"
-        imageSrc="../src/assets/offer/offer-1.jpeg"
+        :imageSrc="image"
         imageAlt="Table prepared for a wedding"
       >
         <p class="offer__content__text">
@@ -47,7 +47,7 @@
       </OfferCard>
       <OfferCard
         :title="$t('offer3Title')"
-        imageSrc="../src/assets/offer/offer-1.jpeg"
+        :imageSrc="image"
         imageAlt="Table prepared for a wedding"
         show-more
       >
@@ -77,7 +77,7 @@
       </OfferCard>
       <OfferCard
         :title="$t('offer4Title')"
-        imageSrc="../src/assets/offer/offer-1.jpeg"
+        :imageSrc="image"
         imageAlt="Table prepared for a wedding"
         show-more
       >
@@ -107,7 +107,7 @@
       </OfferCard>
       <OfferCard
         :title="$t('offer5Title')"
-        imageSrc="../src/assets/offer/offer-1.jpeg"
+        :imageSrc="image"
         imageAlt="Table prepared for a wedding"
       >
         <p class="offer__content__text">
@@ -125,7 +125,7 @@
       </OfferCard>
       <OfferCard
         :title="$t('offer6Title')"
-        imageSrc="../src/assets/offer/offer-1.jpeg"
+        :imageSrc="image"
         imageAlt="Table prepared for a wedding"
         show-more
       >
@@ -156,6 +156,8 @@
 </template>
 <script setup>
 import OfferCard from "../components/offer/OfferCard.vue";
+
+const image = new URL("../assets/offer/offer-1.jpeg", import.meta.url).href;
 </script>
 
 <style lang="scss">
