@@ -44,7 +44,7 @@ import Button from "../shared/Button.vue";
 
 <style lang="scss">
 .basic-offer {
-  padding: 0 3rem 3rem 3rem;
+  padding: 0 1.5rem 3rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;

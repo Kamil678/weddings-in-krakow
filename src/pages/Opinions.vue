@@ -11,11 +11,19 @@
         @toggle="toggleText(index)"
       />
     </div>
+    <div class="opinions__more-opinions">
+      <Button
+        :text="$t('opinionsSeeMoreOpinions')"
+        href="https://search.google.com/local/writereview?placeid=ChIJW9-IxSVbFkcRnuTsp80fS3E"
+        class="opinions__more-opinions__btn"
+      />
+    </div>
   </section>
 </template>
 <script setup>
 import { ref } from "vue";
 import OpinionBox from "../components/opinions/OpinionBox.vue";
+import Button from "../components/shared/Button.vue";
 
 const opinions = [
   {
@@ -201,6 +209,12 @@ const toggleText = (index) => {
       font-size: 50px;
       line-height: 54px;
     }
+  }
+
+  &__more-opinions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>
