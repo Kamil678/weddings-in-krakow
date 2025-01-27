@@ -34,14 +34,14 @@ const contactData = computed(() => [
   {
     icon: "fa-solid fa-phone",
     title: t("contactPhone"),
-    data: "663316266",
-    href: "tel:+48663316266",
+    data: "698831528",
+    href: "tel:+48698831528",
   },
   {
     icon: "fa-solid fa-envelope",
     title: t("contactEmail"),
-    data: "kontakt.weddingfriends@gmail.com",
-    href: "mailto:kontakt.weddingfriends@gmail.com",
+    data: "weddingsinkrakow@gmail.com",
+    href: "mailto:weddingsinkrakow@gmail.com",
   },
   {
     icon: "fa-solid fa-location-dot",

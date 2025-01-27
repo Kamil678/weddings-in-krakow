@@ -213,7 +213,6 @@ const props = defineProps({
       border-radius: 30px;
       font-size: 18px;
       line-height: 20px;
-      text-transform: uppercase;
       cursor: pointer;
       font-weight: 500;
       text-decoration: none;

@@ -32,14 +32,14 @@ const offers = [
   {
     number: 3,
     title: "Audyt w dniu wesela",
-    img: new URL("../assets/offer-halls/offer-1.webp", import.meta.url).href,
+    img: new URL("../assets/offer-halls/offer-3.webp", import.meta.url).href,
     content:
       "Największy sprawdzian umiejętności obsługi wesel następuje w dniu realizacji. Możemy być wtedy z Wami i obserwować jak przebiega koordynacja dnia ślubu ze strony obiektu. Pełny raport naszych spostrzeżeń, który może stanowić również podstawę szkoleń dla Waszej załogi, będzie do Waszej dyspozycji. Czas takiego audytu następuje od samego rana, aż do wieczora.",
   },
   {
     number: 4,
     title: "Kompleksowa organizacja dni otwartych",
-    img: new URL("../assets/offer-halls/offer-1.webp", import.meta.url).href,
+    img: new URL("../assets/offer-halls/offer-4.webp", import.meta.url).href,
     content:
       "Chcesz pokazać się i przybliżyć swoją ofertę klientom? Najlepszym sposobem prezentacji jest zaproszenie potencjalnych klientów do siebie poprzez organizacje dni otwartych / targów ślubnych. Mamy bogate doświadczenie w organizacji tego typu eventów dla wielu obiektów, w różnych lokalizacjach i rodzajach lokali. Po rozpoznaniu Waszego rynku oraz grupy docelowej klientów oraz bieżącej oferty i możliwości jakie ma Wasz lokal przygotujemy specjalny i spersonalizowany event.",
   },

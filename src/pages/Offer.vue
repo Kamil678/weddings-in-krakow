@@ -4,7 +4,7 @@
     <div class="offers__container">
       <OfferCard
         :title="$t('offer1Title')"
-        :imageSrc="image"
+        :imageSrc="image1"
         imageAlt="Table prepared for a wedding"
       >
         <ul>
@@ -26,7 +26,7 @@
       </OfferCard>
       <OfferCard
         :title="$t('offer2Title')"
-        :imageSrc="image"
+        :imageSrc="image2"
         imageAlt="Table prepared for a wedding"
       >
         <p class="offer__content__text">
@@ -47,7 +47,7 @@
       </OfferCard>
       <OfferCard
         :title="$t('offer3Title')"
-        :imageSrc="image"
+        :imageSrc="image3"
         imageAlt="Table prepared for a wedding"
         show-more
       >
@@ -77,7 +77,7 @@
       </OfferCard>
       <OfferCard
         :title="$t('offer4Title')"
-        :imageSrc="image"
+        :imageSrc="image4"
         imageAlt="Table prepared for a wedding"
         show-more
       >
@@ -107,7 +107,7 @@
       </OfferCard>
       <OfferCard
         :title="$t('offer5Title')"
-        :imageSrc="image"
+        :imageSrc="image5"
         imageAlt="Table prepared for a wedding"
       >
         <p class="offer__content__text">
@@ -125,7 +125,7 @@
       </OfferCard>
       <OfferCard
         :title="$t('offer6Title')"
-        :imageSrc="image"
+        :imageSrc="image6"
         imageAlt="Table prepared for a wedding"
         show-more
       >
@@ -157,7 +157,12 @@
 <script setup>
 import OfferCard from "../components/offer/OfferCard.vue";
 
-const image = new URL("../assets/offer/offer-1.jpeg", import.meta.url).href;
+const image1 = new URL("../assets/offer/offer-1.webp", import.meta.url).href;
+const image2 = new URL("../assets/offer/offer-2.webp", import.meta.url).href;
+const image3 = new URL("../assets/offer/offer-3.webp", import.meta.url).href;
+const image4 = new URL("../assets/offer/offer-4.webp", import.meta.url).href;
+const image5 = new URL("../assets/offer/offer-5.webp", import.meta.url).href;
+const image6 = new URL("../assets/offer/offer-6.webp", import.meta.url).href;
 </script>
 
 <style lang="scss">

@@ -12,18 +12,18 @@
       />
     </div>
     <div class="opinions__more-opinions">
-      <Button
-        :text="$t('opinionsSeeMoreOpinions')"
-        href="https://search.google.com/local/writereview?placeid=ChIJW9-IxSVbFkcRnuTsp80fS3E"
+      <a
+        href="https://g.page/r/CZ7k7KfNH0txEAE/review"
+        target="_blank"
         class="opinions__more-opinions__btn"
-      />
+        >{{ $t("opinionsSeeMoreOpinions") }}</a
+      >
     </div>
   </section>
 </template>
 <script setup>
 import { ref } from "vue";
 import OpinionBox from "../components/opinions/OpinionBox.vue";
-import Button from "../components/shared/Button.vue";
 
 const opinions = [
   {
@@ -215,6 +215,31 @@ const toggleText = (index) => {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &__btn {
+      display: block;
+      border: none;
+      background-color: $primary-color;
+      width: fit-content;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 18px;
+      line-height: 20px;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      color: #fff;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      @media (min-width: $md-screen) {
+        font-size: 20px;
+        line-height: 22px;
+        padding: 20px 30px;
+      }
+    }
   }
 }
 </style>

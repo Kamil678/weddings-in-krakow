@@ -102,14 +102,6 @@ const images = [
     alt: "Image from gallery 1",
   },
   {
-    id: 2,
-    src: new URL(
-      "../assets/humanist-weddings/realization-1.jpg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 2",
-  },
-  {
     id: 3,
     src: new URL(
       "../assets/humanist-weddings/realization-2.jpg",
@@ -124,14 +116,6 @@ const images = [
       import.meta.url
     ).href,
     alt: "Image from gallery 4",
-  },
-  {
-    id: 5,
-    src: new URL(
-      "../assets/humanist-weddings/realization-4.jpg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 5",
   },
   {
     id: 6,
@@ -150,36 +134,12 @@ const images = [
     alt: "Image from gallery 7",
   },
   {
-    id: 8,
-    src: new URL(
-      "../assets/humanist-weddings/realization-7.jpg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 8",
-  },
-  {
     id: 9,
     src: new URL(
       "../assets/humanist-weddings/realization-8.jpg",
       import.meta.url
     ).href,
     alt: "Image from gallery 9",
-  },
-  {
-    id: 10,
-    src: new URL(
-      "../assets/humanist-weddings/realization-9.jpg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 10",
-  },
-  {
-    id: 11,
-    src: new URL(
-      "../assets/humanist-weddings/realization-10.jpg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 11",
   },
   {
     id: 12,
@@ -204,22 +164,6 @@ const images = [
       import.meta.url
     ).href,
     alt: "Image from gallery 14",
-  },
-  {
-    id: 15,
-    src: new URL(
-      "../assets/humanist-weddings/realization-15.jpeg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 15",
-  },
-  {
-    id: 16,
-    src: new URL(
-      "../assets/humanist-weddings/realization-16.jpeg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 16",
   },
   {
     id: 17,
@@ -284,86 +228,6 @@ const images = [
       import.meta.url
     ).href,
     alt: "Image from gallery 24",
-  },
-  {
-    id: 25,
-    src: new URL(
-      "../assets/humanist-weddings/realization-25.jpeg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 25",
-  },
-  {
-    id: 27,
-    src: new URL(
-      "../assets/humanist-weddings/realization-26.jpeg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 27",
-  },
-  {
-    id: 28,
-    src: new URL(
-      "../assets/humanist-weddings/realization-27.jpeg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 28",
-  },
-  {
-    id: 29,
-    src: new URL(
-      "../assets/humanist-weddings/realization-28.jpeg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 29",
-  },
-  {
-    id: 30,
-    src: new URL(
-      "../assets/humanist-weddings/realization-29.jpeg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 30",
-  },
-  {
-    id: 31,
-    src: new URL(
-      "../assets/humanist-weddings/realization-30.jpeg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 31",
-  },
-  {
-    id: 32,
-    src: new URL(
-      "../assets/humanist-weddings/realization-31.jpg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 32",
-  },
-  {
-    id: 33,
-    src: new URL(
-      "../assets/humanist-weddings/realization-32.jpg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 33",
-  },
-  {
-    id: 34,
-    src: new URL(
-      "../assets/humanist-weddings/realization-33.jpg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 34",
-  },
-  {
-    id: 35,
-    src: new URL(
-      "../assets/humanist-weddings/realization-34.jpeg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 35",
   },
 ];
 
