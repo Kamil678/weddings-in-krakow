@@ -151,6 +151,23 @@
           </div>
         </template>
       </OfferCard>
+      <OfferCard
+        :title="$t('offer7Title')"
+        :imageSrc="image7"
+        imageAlt="Table prepared for a wedding"
+      >
+        <p class="offer__content__text">
+          {{ $t("offer7ContentText1") }}
+        </p>
+        <template #offer_price>
+          <div class="offer__price">
+            <p>
+              {{ $t("offerServiceCost") }}:
+              {{ $t("offerServiceCostIndividual") }}
+            </p>
+          </div>
+        </template>
+      </OfferCard>
     </div>
   </section>
 </template>
@@ -163,6 +180,7 @@ const image3 = new URL("../assets/offer/offer-3.webp", import.meta.url).href;
 const image4 = new URL("../assets/offer/offer-4.webp", import.meta.url).href;
 const image5 = new URL("../assets/offer/offer-5.webp", import.meta.url).href;
 const image6 = new URL("../assets/offer/offer-6.webp", import.meta.url).href;
+const image7 = new URL("../assets/offer/offer-7.webp", import.meta.url).href;
 </script>
 
 <style lang="scss">
