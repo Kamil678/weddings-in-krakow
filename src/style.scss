@@ -11,11 +11,48 @@ body {
 .page {
   padding: 3.125rem 1.5rem;
 
+  &--max {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
   @media (min-width: $md-screen) {
     padding: $sectionSpace 3rem;
   }
 
   @media (min-width: $xl-screen) {
     padding: $sectionSpace 4.5rem;
+  }
+
+  &__title {
+    font-family: "Domine", serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+    text-align: center;
+
+    @media (min-width: $md-screen) {
+      font-size: 50px;
+      line-height: 54px;
+    }
+  }
+}
+
+.text {
+  font-size: 16px;
+  line-height: 22px;
+
+  @media (min-width: $md-screen) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $xl-screen) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  &--center {
+    text-align: center;
   }
 }

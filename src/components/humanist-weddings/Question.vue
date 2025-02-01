@@ -44,6 +44,7 @@ const toggle = () => {
   background-color: rgba(161, 109, 139, 0.3);
   border-radius: 10px;
   width: 100%;
+  min-width: 100%;
 
   &__question {
     display: flex;

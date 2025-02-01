@@ -1,6 +1,6 @@
 <template>
   <section class="page opinions">
-    <h2 class="opinions__title">{{ $t("navOpinions") }}</h2>
+    <h2 class="page__title">{{ $t("navOpinions") }}</h2>
     <div class="opinions__boxes">
       <OpinionBox
         v-for="(opinion, index) in opinions"
@@ -198,19 +198,6 @@ const toggleText = (index) => {
 
 <style lang="scss">
 .opinions {
-  &__title {
-    font-family: "Domine", serif;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 44px;
-    text-align: center;
-
-    @media (min-width: $md-screen) {
-      font-size: 50px;
-      line-height: 54px;
-    }
-  }
-
   &__more-opinions {
     display: flex;
     align-items: center;

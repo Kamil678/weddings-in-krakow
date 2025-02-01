@@ -1,6 +1,6 @@
 <template>
   <section class="page offers">
-    <h2 class="offers__title">{{ $t("navOffer") }}</h2>
+    <h2 class="page__title">{{ $t("navOffer") }}</h2>
     <div class="offers__container">
       <OfferCard
         :title="$t('offer1Title')"
@@ -185,19 +185,6 @@ const image7 = new URL("../assets/offer/offer-7.webp", import.meta.url).href;
 
 <style lang="scss">
 .offers {
-  &__title {
-    font-family: "Domine", serif;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 44px;
-    text-align: center;
-
-    @media (min-width: $md-screen) {
-      font-size: 50px;
-      line-height: 54px;
-    }
-  }
-
   &__container {
     margin-top: $sectionSpace;
     display: grid;

@@ -1,6 +1,6 @@
 <template>
   <section class="page portfolio">
-    <h2 class="portfolio__title">{{ $t("navPortfolio") }}</h2>
+    <h2 class="page__title">{{ $t("navPortfolio") }}</h2>
     <div class="portfolio__gallery">
       <div
         v-for="(image, index) in images"
@@ -13,39 +13,49 @@
   </section>
 </template>
 <script setup>
+import { ref, onMounted } from "vue";
+
 const images = Array.from({ length: 72 }, (_, i) => ({
   id: i + 1,
   src: new URL(`../assets/portfolio/image-${i + 1}.webp`, import.meta.url).href,
   alt: `Portfolio image ${i + 1} showcasing design work`,
+  isLoaded: false,
 }));
+
+onMounted(() => {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.onload = () => img.classList.add("loaded");
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  document
+    .querySelectorAll("img[data-src]")
+    .forEach((img) => observer.observe(img));
+});
 </script>
 
 <style lang="scss">
 .portfolio {
-  &__title {
-    font-family: "Domine", serif;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 44px;
-    margin-bottom: 50px;
-    text-align: center;
-
-    @media (min-width: $md-screen) {
-      font-size: 50px;
-      line-height: 54px;
-      margin-bottom: 100px;
-    }
-  }
-
   &__gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 20px;
     width: 100%;
     box-sizing: border-box;
+    margin-top: 3.125rem;
 
     @media (min-width: $sm-screen) {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    @media (min-width: $md-screen) {
+      margin-top: 6.25rem;
     }
 
     @media (min-width: $xl-screen) {

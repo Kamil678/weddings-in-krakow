@@ -1,6 +1,6 @@
 <template>
   <section class="page contact">
-    <h2 class="contact__title">{{ $t("navContact") }}</h2>
+    <h2 class="page__title">{{ $t("navContact") }}</h2>
     <div class="contact__container">
       <img
         src="/src/assets/contact/contact.webp"
@@ -34,7 +34,7 @@ const contactData = computed(() => [
   {
     icon: "fa-solid fa-phone",
     title: t("contactPhone"),
-    data: "698831528",
+    data: "+48698831528",
     href: "tel:+48698831528",
   },
   {
@@ -55,19 +55,6 @@ const contactData = computed(() => [
 
 <style lang="scss">
 .contact {
-  &__title {
-    font-family: "Domine", serif;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 44px;
-    text-align: center;
-
-    @media (min-width: $md-screen) {
-      font-size: 50px;
-      line-height: 54px;
-    }
-  }
-
   &__container {
     display: flex;
     flex-direction: column;

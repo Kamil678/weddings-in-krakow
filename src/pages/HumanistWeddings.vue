@@ -333,14 +333,6 @@ const images = [
     ).href,
     alt: "Image from gallery 30",
   },
-  {
-    id: 31,
-    src: new URL(
-      "../assets/humanist-weddings/realization-31.jpg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 31",
-  },
 ];
 
 const activeQuestion = ref(null);
@@ -479,7 +471,6 @@ const toggleQuestion = (index) => {
         }
 
         @media (min-width: $lg-screen) {
-          width: auto;
           max-width: 1400px;
           margin: 0 auto;
         }
