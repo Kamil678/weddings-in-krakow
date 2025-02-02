@@ -7,18 +7,31 @@
         :key="index"
         class="portfolio__gallery__item"
       >
-        <img :src="image.src" :alt="image.alt" loading="lazy" />
+        <img
+          :data-src="image.src"
+          :alt="image.alt"
+          class="lazy-image"
+          loading="lazy"
+          :src="image.loadingSrc"
+        />
       </div>
     </div>
   </section>
 </template>
+
 <script setup>
 import { ref, onMounted } from "vue";
 
+// Placeholder SVG w formacie Base64
+const placeholder =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='100' height='100' fill='%23ddd' /%3E%3C/svg%3E";
+
+// Przygotowanie listy obrazów
 const images = Array.from({ length: 72 }, (_, i) => ({
   id: i + 1,
   src: new URL(`../assets/portfolio/image-${i + 1}.webp`, import.meta.url).href,
   alt: `Portfolio image ${i + 1} showcasing design work`,
+  loadingSrc: placeholder, // Przypisanie placeholdera
   isLoaded: false,
 }));
 
@@ -28,14 +41,19 @@ onMounted(() => {
       if (entry.isIntersecting) {
         const img = entry.target;
         img.src = img.dataset.src;
-        img.onload = () => img.classList.add("loaded");
-        observer.unobserve(img);
+
+        img.onload = () => {
+          img.classList.add("loaded");
+          img.classList.remove("loading");
+          observer.unobserve(img);
+        };
       }
     });
   });
 
+  // Obserwujemy obrazy
   document
-    .querySelectorAll("img[data-src]")
+    .querySelectorAll("img.lazy-image")
     .forEach((img) => observer.observe(img));
 });
 </script>
@@ -59,7 +77,7 @@ onMounted(() => {
     }
 
     @media (min-width: $xl-screen) {
-      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     }
 
     &__item {
@@ -69,8 +87,27 @@ onMounted(() => {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        opacity: 0.5;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      img.loaded {
+        opacity: 1;
       }
     }
+  }
+}
+
+.lazy-image {
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
   }
 }
 </style>
