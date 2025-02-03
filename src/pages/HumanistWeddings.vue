@@ -214,14 +214,6 @@ const images = [
     alt: "Image from gallery 15",
   },
   {
-    id: 16,
-    src: new URL(
-      "../assets/humanist-weddings/realization-16.jpg",
-      import.meta.url
-    ).href,
-    alt: "Image from gallery 16",
-  },
-  {
     id: 17,
     src: new URL(
       "../assets/humanist-weddings/realization-17.jpeg",
@@ -332,6 +324,14 @@ const images = [
       import.meta.url
     ).href,
     alt: "Image from gallery 30",
+  },
+  {
+    id: 31,
+    src: new URL(
+      "../assets/humanist-weddings/realization-31.jpg",
+      import.meta.url
+    ).href,
+    alt: "Image from gallery 31",
   },
 ];
 
