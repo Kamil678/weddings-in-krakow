@@ -3,58 +3,115 @@
     <h2 class="page__title">{{ $t("navPortfolio") }}</h2>
     <div class="portfolio__gallery">
       <div
-        v-for="(image, index) in images"
-        :key="index"
+        v-for="image in currentPageImages"
+        :key="image.id"
         class="portfolio__gallery__item"
       >
+        <div class="image-loader">
+          <div class="pulse-loader">
+            <div class="pulse-loader__circle"></div>
+            <div class="pulse-loader__circle"></div>
+            <div class="pulse-loader__circle"></div>
+          </div>
+        </div>
         <img
           :data-src="image.src"
           :alt="image.alt"
           class="lazy-image"
-          loading="lazy"
-          :src="image.loadingSrc"
+          ref="imageRefs"
         />
       </div>
+    </div>
+
+    <div class="pagination">
+      <button
+        class="pagination__button"
+        :disabled="currentPage === 1"
+        @click="changePage(currentPage - 1)"
+      >
+        {{ $t("portfolioPrevious") }}
+      </button>
+
+      <div class="pagination__pages">
+        <button
+          v-for="pageNum in totalPages"
+          :key="pageNum"
+          class="pagination__page"
+          :class="{ 'pagination__page--active': pageNum === currentPage }"
+          @click="changePage(pageNum)"
+        >
+          {{ pageNum }}
+        </button>
+      </div>
+
+      <button
+        class="pagination__button"
+        :disabled="currentPage === totalPages"
+        @click="changePage(currentPage + 1)"
+      >
+        {{ $t("portfolioNext") }}
+      </button>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 
-// Placeholder SVG w formacie Base64
-const placeholder =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='100' height='100' fill='%23ddd' /%3E%3C/svg%3E";
+const IMAGES_PER_PAGE = 15;
+const currentPage = ref(1);
 
-// Przygotowanie listy obrazów
 const images = Array.from({ length: 72 }, (_, i) => ({
   id: i + 1,
   src: new URL(`../assets/portfolio/image-${i + 1}.webp`, import.meta.url).href,
-  alt: `Portfolio image ${i + 1} showcasing design work`,
-  loadingSrc: placeholder, // Przypisanie placeholdera
+  alt: `Portfolio image ${i + 1}`,
   isLoaded: false,
 }));
 
-onMounted(() => {
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
+const totalPages = computed(() => Math.ceil(images.length / IMAGES_PER_PAGE));
 
-        img.onload = () => {
-          img.classList.add("loaded");
-          img.classList.remove("loading");
-          observer.unobserve(img);
-        };
+const currentPageImages = computed(() => {
+  const start = (currentPage.value - 1) * IMAGES_PER_PAGE;
+  const end = start + IMAGES_PER_PAGE;
+  return images.slice(start, end);
+});
+
+const changePage = (newPage) => {
+  if (newPage >= 1 && newPage <= totalPages.value) {
+    currentPage.value = newPage;
+    window.scrollTo({
+      top: document.querySelector(".portfolio__gallery").offsetTop,
+      behavior: "smooth",
+    });
+  }
+};
+
+const onImageLoad = (event) => {
+  const img = event.target;
+  img.classList.add("loaded");
+  const loader = img.previousElementSibling;
+  if (loader) {
+    loader.classList.add("hidden");
+  }
+};
+
+const loadCurrentPageImages = () => {
+  setTimeout(() => {
+    document.querySelectorAll(".lazy-image").forEach((img) => {
+      if (img.dataset.src && !img.src) {
+        img.src = img.dataset.src;
+        img.onload = onImageLoad;
       }
     });
-  });
+  }, 100);
+};
 
-  // Obserwujemy obrazy
-  document
-    .querySelectorAll("img.lazy-image")
-    .forEach((img) => observer.observe(img));
+watch(currentPage, () => {
+  loadCurrentPageImages();
+});
+
+onMounted(() => {
+  loadCurrentPageImages();
 });
 </script>
 
@@ -67,13 +124,10 @@ onMounted(() => {
     width: 100%;
     box-sizing: border-box;
     margin-top: 3.125rem;
+    margin-bottom: 2rem;
 
     @media (min-width: $sm-screen) {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-
-    @media (min-width: $md-screen) {
-      margin-top: 6.25rem;
     }
 
     @media (min-width: $xl-screen) {
@@ -82,12 +136,15 @@ onMounted(() => {
 
     &__item {
       overflow: hidden;
+      position: relative;
+      aspect-ratio: 1;
+      background: #f5f5f5;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.5;
+        opacity: 0;
         transition: opacity 0.3s ease-in-out;
       }
 
@@ -98,16 +155,120 @@ onMounted(() => {
   }
 }
 
-.lazy-image {
-  animation: shimmer 1.5s infinite linear;
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  @media (min-width: $sm-screen) {
+    flex-direction: row;
+    padding-top: 2rem;
+  }
+
+  &__button {
+    padding: 0.5rem 1rem;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover:not(:disabled) {
+      background: #e0e0e0;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    @media (min-width: $sm-screen) {
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  &__pages {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__page {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: $gray-color;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover:not(&--active) {
+      background: #e0e0e0;
+    }
+
+    &--active {
+      background: $primary-color;
+      color: #fff;
+    }
+
+    @media (min-width: $sm-screen) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -100% 0;
+.image-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+
+  &.hidden {
+    display: none;
   }
+}
+
+.pulse-loader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  &__circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    animation: pulse 1.4s ease-in-out infinite;
+
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
   100% {
-    background-position: 100% 0;
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
   }
 }
 </style>

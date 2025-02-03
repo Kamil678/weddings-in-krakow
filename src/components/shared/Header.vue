@@ -10,12 +10,12 @@
           <img
             src="../../assets/shared/icon-hamburger.svg"
             alt="Hamburger icon"
-            class="hamburegr-image"
+            class="hamburger-image"
           />
         </button>
         <button
           v-if="openMenu"
-          @click="(openMenu = false), (isOpenChangeLanguageMenu = false)"
+          @click="closeMenu"
           class="header__nav__close-menu-btn"
         >
           &times;
@@ -36,7 +36,7 @@
             :to="link.path"
             class="header__nav__list__link"
             active-class="active"
-            @click="openMenu = !openMenu"
+            @click="toggleMenu"
             >{{ $t(link.label) }}</router-link
           >
         </li>
@@ -45,13 +45,16 @@
     </nav>
   </header>
 </template>
+
 <script setup>
 import Logo from "./Logo.vue";
 import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import LanguageDropdown from "./LanguageDropdown.vue";
+import { debounce } from "lodash";
 
 const openMenu = ref(false);
+const isOpenChangeLanguageMenu = ref(false);
 
 const { locale, t } = useI18n();
 
@@ -70,9 +73,17 @@ const filteredNavLinks = computed(() => {
   if (locale.value === "pl") {
     return navLinks;
   }
-
   return navLinks.filter((link) => link.path !== "/offer-halls");
 });
+
+const closeMenu = debounce(() => {
+  openMenu.value = false;
+  isOpenChangeLanguageMenu.value = false;
+}, 200);
+
+const toggleMenu = () => {
+  openMenu.value = !openMenu.value;
+};
 </script>
 
 <style lang="scss">
@@ -98,48 +109,40 @@ const filteredNavLinks = computed(() => {
       min-width: auto;
       text-align: start;
       cursor: pointer;
-
-      @media (min-width: $sm-screen) {
-        min-width: 90px;
-      }
     }
 
     &__list {
       position: absolute;
       left: 0;
       right: 0;
-      top: -555px;
+      top: 0;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-out;
+      background-color: $primary-color;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 1.5rem;
       list-style: none;
-      background-color: $primary-color;
-      padding: 1rem;
-      transition: top 0.3s ease-out, transform 0.3s ease-out;
-      // background-color: rgba(161, 109, 139, 0.6);
-      // backdrop-filter: blur(10px);
-      // -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       color: white;
 
       @media (min-width: $sm-screen) {
-        top: -515px;
+        transform: translateY(-100%);
       }
 
       @media (min-width: $xl-screen) {
-        top: -75px;
+        transform: translateY(-75px);
         gap: 1.5rem 3rem;
         flex-direction: row;
-        transition: top 0.2s ease-out, transform 0.2s ease-out;
       }
 
       &--open {
-        top: 93px;
+        transform: translateY(93px);
 
         @media (min-width: $sm-screen) {
-          top: 110px;
+          transform: translateY(110px);
         }
       }
 
@@ -167,28 +170,6 @@ const filteredNavLinks = computed(() => {
         &:hover::before {
           width: 100%;
         }
-
-        &--change-language-element {
-          margin-left: 0;
-          &:hover::before {
-            width: 0;
-          }
-
-          @media (min-width: $xxxl-screen) {
-            margin-left: 10px;
-          }
-        }
-      }
-
-      &__change-language-btn {
-        background-color: transparent;
-        border: none;
-        text-transform: uppercase;
-        font-size: 1.125rem;
-        line-height: 20px;
-        border-left: 2px solid #000;
-        padding-left: 5px;
-        cursor: pointer;
       }
 
       &__link {
@@ -232,13 +213,9 @@ const filteredNavLinks = computed(() => {
         min-width: auto;
         text-align: left;
 
-        .hamburegr-image {
+        .hamburger-image {
           width: 1.625rem;
           height: 1.625rem;
-        }
-
-        @media (min-width: $sm-screen) {
-          min-width: 90px;
         }
       }
     }
