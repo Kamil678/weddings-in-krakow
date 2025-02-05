@@ -1,15 +1,15 @@
 <template>
-  <section class="page contact">
-    <h2 class="page__title">{{ $t("navContact") }}</h2>
-    <div class="contact__container">
+  <main class="page contact">
+    <h1 class="page__title">{{ $t("navContact") }}</h1>
+    <section class="contact__container">
       <img
         src="/src/assets/contact/contact.webp"
         alt="A photo of Marta Wątor drinking coffee"
         class="contact__container__image"
       />
       <ContactForm />
-    </div>
-    <div class="contact__boxes">
+    </section>
+    <section class="contact__boxes">
       <ContactBox
         v-for="(contact, index) in contactData"
         :key="index"
@@ -19,8 +19,8 @@
         :href="contact.href"
         :target="contact.target"
       />
-    </div>
-  </section>
+    </section>
+  </main>
 </template>
 <script setup>
 import { computed } from "vue";

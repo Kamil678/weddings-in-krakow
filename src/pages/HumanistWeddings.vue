@@ -1,25 +1,25 @@
 <template>
-  <section class="hummanist-weddings">
-    <div class="hummanist-weddings__header">
-      <div class="hummanist-weddings__header__info">
-        <h2>{{ $t("navHumanistWeddings") }}</h2>
+  <main class="humanist-weddings">
+    <section class="humanist-weddings__header">
+      <div class="humanist-weddings__header__info">
+        <h1>{{ $t("navHumanistWeddings") }}</h1>
         <p>
           {{ $t("humanistWeddingsHeaderText") }}
         </p>
       </div>
       <img
         src="../assets/humanist-weddings/humanist-weddings-header.jpg"
-        class="hummanist-weddings__header__image"
+        class="humanist-weddings__header__image"
       />
-    </div>
-    <div
-      class="hummanist-weddings__section hummanist-weddings__section--faq-container"
+    </section>
+    <section
+      class="humanist-weddings__section humanist-weddings__section--faq-container"
     >
-      <h3 class="hummanist-weddings__section__title">
+      <h2 class="humanist-weddings__section__title">
         {{ $t("humanistWeddingsMostOftenAskedQuestions") }}
-      </h3>
-      <div class="hummanist-weddings__section--faq-container__faq">
-        <div class="hummanist-weddings__section--faq-container__faq__questions">
+      </h2>
+      <div class="humanist-weddings__section--faq-container__faq">
+        <div class="humanist-weddings__section--faq-container__faq__questions">
           <Question
             v-for="(question, index) in questions"
             :key="index"
@@ -29,38 +29,38 @@
             @toggle="toggleQuestion(index)"
           />
         </div>
-        <div class="hummanist-weddings__section--faq-container__faq__image">
+        <div class="humanist-weddings__section--faq-container__faq__image">
           <img src="../assets/humanist-weddings/humanist-weddings-faq.jpg" />
         </div>
       </div>
       <Button
         :text="$t('navContact')"
         href="/contact"
-        class="hummanist-weddings__section--faq-container__btn"
+        class="humanist-weddings__section--faq-container__btn"
       />
-    </div>
-    <div
-      class="hummanist-weddings__section hummanist-weddings__section--realizations"
+    </section>
+    <section
+      class="humanist-weddings__section humanist-weddings__section--realizations"
     >
-      <h3
-        class="hummanist-weddings__section__title hummanist-weddings__section--realizations__title"
+      <h2
+        class="humanist-weddings__section__title humanist-weddings__section--realizations__title"
       >
         {{ $t("humanistWeddingsRealizationTitle") }}
-      </h3>
-      <p class="hummanist-weddings__section--realizations__text">
+      </h2>
+      <p class="humanist-weddings__section--realizations__text">
         {{ $t("humanistWeddingsRealizationText") }}
       </p>
-      <div class="hummanist-weddings__section--realizations__gallery">
+      <div class="humanist-weddings__section--realizations__gallery">
         <div
           v-for="(image, index) in images"
           :key="index"
-          class="hummanist-weddings__section--realizations__gallery__item"
+          class="humanist-weddings__section--realizations__gallery__item"
         >
           <img :src="image.src" :alt="image.alt" />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 </template>
 <script setup>
 import Question from "../components/humanist-weddings/Question.vue";
@@ -343,7 +343,7 @@ const toggleQuestion = (index) => {
 </script>
 
 <style lang="scss">
-.hummanist-weddings {
+.humanist-weddings {
   &__header {
     display: flex;
     flex-direction: column;
@@ -360,8 +360,8 @@ const toggleQuestion = (index) => {
       color: #fff;
       padding: 50px;
 
-      h2 {
-        font-family: "Cormorant Upright", serif;
+      h1 {
+        font-family: "Domine", serif;
         font-weight: 700;
         font-size: 40px;
         line-height: 44px;
@@ -419,7 +419,7 @@ const toggleQuestion = (index) => {
     padding: 50px 30px;
 
     &__title {
-      font-family: "Cormorant Upright", serif;
+      font-family: "Domine", serif;
       font-weight: 700;
       font-size: 36px;
       line-height: 40px;

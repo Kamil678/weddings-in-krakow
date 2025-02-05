@@ -1,10 +1,10 @@
 <template>
-  <section class="page offer-halls">
-    <h2 class="page__title">Oferta dla sal</h2>
-    <div class="offer-halls__boxes">
+  <main class="page offer-halls">
+    <h1 class="page__title">Oferta dla sal</h1>
+    <section class="offer-halls__boxes">
       <Box v-for="offer in offers" :offer="offer" :key="offer.number" />
-    </div>
-  </section>
+    </section>
+  </main>
 </template>
 <script setup>
 import { ref } from "vue";

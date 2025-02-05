@@ -173,11 +173,10 @@ const toggleMenu = () => {
       }
 
       &__link {
-        text-transform: uppercase;
         text-decoration: none;
         color: #fff;
-        font-size: 1rem;
-        line-height: 18px;
+        font-size: 1.1rem;
+        line-height: 20px;
         transition: ease 0.3s;
       }
     }

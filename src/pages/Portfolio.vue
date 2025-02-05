@@ -1,7 +1,7 @@
 <template>
-  <section class="page portfolio">
-    <h2 class="page__title">{{ $t("navPortfolio") }}</h2>
-    <div class="portfolio__gallery">
+  <main class="page portfolio">
+    <h1 class="page__title">{{ $t("navPortfolio") }}</h1>
+    <section class="portfolio__gallery">
       <div
         v-for="image in currentPageImages"
         :key="image.id"
@@ -21,7 +21,7 @@
           ref="imageRefs"
         />
       </div>
-    </div>
+    </section>
 
     <div class="pagination">
       <button
@@ -52,7 +52,7 @@
         {{ $t("portfolioNext") }}
       </button>
     </div>
-  </section>
+  </main>
 </template>
 
 <script setup>

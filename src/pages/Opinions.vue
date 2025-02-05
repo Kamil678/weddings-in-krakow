@@ -1,7 +1,7 @@
 <template>
-  <section class="page opinions">
-    <h2 class="page__title">{{ $t("navOpinions") }}</h2>
-    <div class="opinions__boxes">
+  <main class="page opinions">
+    <h1 class="page__title">{{ $t("navOpinions") }}</h1>
+    <section class="opinions__boxes">
       <OpinionBox
         v-for="(opinion, index) in opinions"
         :key="opinion.id"
@@ -10,7 +10,7 @@
         :active="activeOpinion === index"
         @toggle="toggleText(index)"
       />
-    </div>
+    </section>
     <div class="opinions__more-opinions">
       <a
         href="https://g.page/r/CZ7k7KfNH0txEAE/review"
@@ -19,7 +19,7 @@
         >{{ $t("opinionsSeeMoreOpinions") }}</a
       >
     </div>
-  </section>
+  </main>
 </template>
 <script setup>
 import { ref } from "vue";

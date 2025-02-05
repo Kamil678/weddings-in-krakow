@@ -35,8 +35,8 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        animateNumber(count1.value, 166);
-        animateNumber(count2.value, 30);
+        animateNumber(count1.value, 172);
+        animateNumber(count2.value, 31);
         observer.unobserve(entry.target);
       }
     });

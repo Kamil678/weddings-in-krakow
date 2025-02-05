@@ -1,11 +1,13 @@
 <template>
-  <section class="page page--max wedding-coordination">
-    <h2 class="page__title wedding-coordination__title">
+  <main class="page page--max wedding-coordination">
+    <h1 class="page__title wedding-coordination__title">
       {{ $t("weddingDayCoordinationTitle") }}
-    </h2>
-    <div class="wedding-coordination__header">
+    </h1>
+    <section class="wedding-coordination__header">
       <img
-        src="../assets/wedding-day-coordination/wedding-coordination-day.jpg"
+        src="../assets/wedding-day-coordination/wedding-coordination-day-1.webp"
+        alt="Wedding planner handing out flowers to guests"
+        loading="lazy"
         class="wedding-coordination__header__image"
       />
       <div class="wedding-coordination__header__info">
@@ -13,8 +15,8 @@
           {{ $t("weddingDayCoordinationBasicDescription") }}
         </p>
       </div>
-    </div>
-    <div class="wedding-coordination__content">
+    </section>
+    <section class="wedding-coordination__content">
       <div class="wedding-coordination__content__container">
         <div class="tasks">
           <div
@@ -33,11 +35,11 @@
           {{ $t("weddingDayCoordinationBasicDescription2") }}
         </p>
       </div>
-    </div>
+    </section>
 
-    <div class="wedding-coordination__content alt-bg">
+    <section class="wedding-coordination__content alt-bg">
       <div class="wedding-coordination__content__container">
-        <h3>{{ $t("weddingDayCoordinationQuestion1") }}</h3>
+        <h2>{{ $t("weddingDayCoordinationQuestion1") }}</h2>
         <div class="service-content">
           <div class="service-content__text text">
             <p>
@@ -46,20 +48,26 @@
           </div>
           <div class="service-content__image">
             <img
-              src="../assets/wedding-day-coordination/wedding-coordination-day.jpg"
+              src="../assets/wedding-day-coordination/wedding-coordination-day-2.webp"
+              alt="Wedding planner improving the bride's dress"
+              loading="lazy"
             />
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="wedding-coordination__content" style="padding-bottom;: 0">
+    <section
+      class="wedding-coordination__content wedding-coordination__content--no-padding"
+    >
       <div class="wedding-coordination__content__container">
-        <h3>{{ $t("weddingDayCoordinationQuestion2") }}</h3>
+        <h2>{{ $t("weddingDayCoordinationQuestion2") }}</h2>
         <div class="service-content service-content--reverse">
           <div class="service-content__image">
             <img
-              src="../assets/wedding-day-coordination/wedding-coordination-day.jpg"
+              src="../assets/wedding-day-coordination/wedding-coordination-day-3.webp"
+              alt="Wedding planner organizing the party"
+              loading="lazy"
             />
           </div>
           <div class="service-content__text text">
@@ -69,8 +77,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 </template>
 
 <script setup>
@@ -212,6 +220,10 @@ const coordinationTasks = computed(() => [
   &__content {
     padding: 3.125rem 0;
 
+    &--no-padding {
+      padding-bottom: 0;
+    }
+
     &.alt-bg {
       background-color: rgba(#a16d8b, 0.2);
     }
@@ -229,7 +241,7 @@ const coordinationTasks = computed(() => [
         padding: 0 4.5rem;
       }
 
-      h3 {
+      h2 {
         font-family: "Domine", serif;
         color: #a16d8b;
         font-size: 2rem;

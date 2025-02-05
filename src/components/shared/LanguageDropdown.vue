@@ -3,6 +3,7 @@
     <button class="dropdown__button">
       <img
         :src="currentLanguage.flagImg"
+        :alt="currentLanguage.alt"
         height="16"
         class="dropdown__button__img-flag"
       />
@@ -11,18 +12,22 @@
         <img
           v-if="isOpenChangeLanguageMenu && !smallScreen"
           src="../../assets/shared/chevron-up-ico.svg"
+          alt="Black up arrow"
         />
         <img
           v-if="isOpenChangeLanguageMenu && smallScreen"
           src="../../assets/shared/chevron-up-ico-white.svg"
+          alt="White up arrow"
         />
         <img
           v-if="!isOpenChangeLanguageMenu && !smallScreen"
           src="../../assets/shared/chevron-down-ico.svg"
+          alt="Black down arrow"
         />
         <img
           v-if="!isOpenChangeLanguageMenu && smallScreen"
           src="../../assets/shared/chevron-down-ico-white.svg"
+          alt="White down arrow"
         />
       </span>
     </button>
@@ -35,6 +40,7 @@
       >
         <img
           :src="lang.flagImg"
+          :alt="lang.alt"
           height="14"
           class="dropdown__button__img-flag"
         />
@@ -62,26 +68,31 @@ const languages = [
     code: "pl",
     label: "PL",
     flagImg: new URL("../../assets/shared/pl-flag.png", import.meta.url).href,
+    alt: "Polish flag",
   },
   {
     code: "en",
     label: "EN",
     flagImg: new URL("../../assets/shared/en-flag.png", import.meta.url).href,
+    alt: "Great Britain flag",
   },
   {
     code: "fr",
     label: "FR",
     flagImg: new URL("../../assets/shared/fr-flag.png", import.meta.url).href,
+    alt: "Flag of France",
   },
   {
     code: "it",
     label: "IT",
     flagImg: new URL("../../assets/shared/it-flag.png", import.meta.url).href,
+    alt: "Italian flag",
   },
   {
     code: "de",
     label: "DE",
     flagImg: new URL("../../assets/shared/de-flag.png", import.meta.url).href,
+    alt: "Flag of Germany",
   },
 ];
 

@@ -1,11 +1,11 @@
 <template>
-  <section class="page offers">
-    <h2 class="page__title">{{ $t("navOffer") }}</h2>
-    <div class="offers__container">
+  <main class="page offers">
+    <h1 class="page__title">{{ $t("navOffer") }}</h1>
+    <section class="offers__container">
       <OfferCard
         :title="$t('offer1Title')"
         :imageSrc="image1"
-        imageAlt="Table prepared for a wedding"
+        imageAlt="Young couple holding hands"
       >
         <ul>
           <li>{{ $t("offer1ContentText1") }}</li>
@@ -27,7 +27,7 @@
       <OfferCard
         :title="$t('offer2Title')"
         :imageSrc="image2"
-        imageAlt="Table prepared for a wedding"
+        imageAlt="Groom kissing bride"
       >
         <p class="offer__content__text">
           {{ $t("offer2ContentText1") }}
@@ -48,7 +48,7 @@
       <OfferCard
         :title="$t('offer3Title')"
         :imageSrc="image3"
-        imageAlt="Table prepared for a wedding"
+        imageAlt="Wedding planner holding the bride's"
         show-more
       >
         <p class="offer__content__text">
@@ -78,7 +78,7 @@
       <OfferCard
         :title="$t('offer4Title')"
         :imageSrc="image4"
-        imageAlt="Table prepared for a wedding"
+        imageAlt="Wedding planner with the bride"
         show-more
       >
         <p class="offer__content__text">
@@ -108,7 +108,7 @@
       <OfferCard
         :title="$t('offer5Title')"
         :imageSrc="image5"
-        imageAlt="Table prepared for a wedding"
+        imageAlt="Wedding planner drinking coffee"
       >
         <p class="offer__content__text">
           {{ $t("offer5ContentText1") }}
@@ -126,7 +126,7 @@
       <OfferCard
         :title="$t('offer6Title')"
         :imageSrc="image6"
-        imageAlt="Table prepared for a wedding"
+        imageAlt="The bride and groom among the wedding guests"
         show-more
       >
         <p class="offer__content__text">
@@ -154,7 +154,7 @@
       <OfferCard
         :title="$t('offer7Title')"
         :imageSrc="image7"
-        imageAlt="Table prepared for a wedding"
+        imageAlt="Young couple in Italy"
       >
         <p class="offer__content__text">
           {{ $t("offer7ContentText1") }}
@@ -168,8 +168,8 @@
           </div>
         </template>
       </OfferCard>
-    </div>
-  </section>
+    </section>
+  </main>
 </template>
 <script setup>
 import OfferCard from "../components/offer/OfferCard.vue";
