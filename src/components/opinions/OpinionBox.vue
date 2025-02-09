@@ -18,7 +18,7 @@
         type="button"
         v-if="opinion.content.length > 1000"
         @click="toggle"
-        class="opinion-box__content-container__show-more-button"
+        class="opinion-box__content-container__show-more-button btn"
       >
         {{ active ? `${$t("opinionsSeeLess")}` : `${$t("opinionsSeeMore")}` }}
       </button>
@@ -166,29 +166,7 @@ const toggle = () => {
     }
 
     &__show-more-button {
-      display: block;
-      border: none;
-      background-color: $primary-color;
-      width: fit-content;
-      padding: 15px 25px;
-      border-radius: 30px;
-      font-size: 16px;
-      line-height: 20px;
-      cursor: pointer;
-      font-weight: 500;
-      text-decoration: none;
-      color: #fff;
       margin-top: 30px;
-
-      &:hover {
-        opacity: 0.9;
-      }
-
-      @media (min-width: $md-screen) {
-        font-size: 20px;
-        line-height: 22px;
-        padding: 15px 20px;
-      }
     }
 
     @media (min-width: $md-screen) {

@@ -12,7 +12,11 @@
       >
         <slot></slot>
       </div>
-      <button v-if="showButton" @click="toggleExpand" class="show-more-button">
+      <button
+        v-if="showButton"
+        @click="toggleExpand"
+        class="show-more-button btn"
+      >
         {{
           isExpanded ? `${$t("opinionsSeeLess")}` : `${$t("opinionsSeeMore")}`
         }}
@@ -157,28 +161,9 @@ onMounted(() => {
   }
 
   .show-more-button {
-    background-color: $primary-color;
-    width: fit-content;
     padding: 15px 40px;
-    border-radius: 30px;
-    color: #fff;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-    line-height: 20px;
-    cursor: pointer;
-    font-weight: 500;
     align-self: center;
     margin-top: 20px;
-
-    @media (min-width: $md-screen) {
-      font-size: 18px;
-      line-height: 22px;
-    }
-
-    &:hover {
-      opacity: 0.9;
-    }
   }
 }
 </style>

@@ -26,7 +26,7 @@
       <a
         href="/public/oferta-dla-sal.pdf"
         target="_blank"
-        class="box__more-info__btn"
+        class="box__more-info__btn btn"
       >
         <i class="fa-solid fa-download"></i>
         Pełna oferta
@@ -205,31 +205,8 @@ const props = defineProps({
     }
 
     &__btn {
-      display: block;
-      border: none;
-      background-color: $primary-color;
-      width: fit-content;
-      padding: 15px 25px;
-      border-radius: 30px;
-      font-size: 18px;
-      line-height: 20px;
-      cursor: pointer;
-      font-weight: 500;
-      text-decoration: none;
-      color: #fff;
-
       .fa-solid {
         margin-right: 10px;
-      }
-
-      &:hover {
-        opacity: 0.9;
-      }
-
-      @media (min-width: $md-screen) {
-        font-size: 20px;
-        line-height: 22px;
-        padding: 20px 30px;
       }
     }
   }

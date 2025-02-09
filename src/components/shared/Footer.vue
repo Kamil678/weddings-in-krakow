@@ -53,7 +53,7 @@
     </div>
     <div class="footer__copyright-container">
       <p class="footer__copyright-container__text">
-        Copyright 2024 &copy; Marta Wątor - Weddings in Krakow
+        Copyright 2025 &copy; Marta Wątor - Weddings in Krakow
       </p>
       <p class="footer__copyright-container__text">
         Website created by Kamil Pigulak

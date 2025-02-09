@@ -8,7 +8,8 @@
         </p>
       </div>
       <img
-        src="../assets/humanist-weddings/humanist-weddings-header.jpg"
+        src="../assets/humanist-weddings/humanist-weddings-header.webp"
+        alt="The bride and groom kissing against the backdrop of colorful firecrackers"
         class="humanist-weddings__header__image"
       />
     </section>
@@ -30,7 +31,10 @@
           />
         </div>
         <div class="humanist-weddings__section--faq-container__faq__image">
-          <img src="../assets/humanist-weddings/humanist-weddings-faq.jpg" />
+          <img
+            src="../assets/humanist-weddings/humanist-weddings-faq.webp"
+            alt="A photo of a humanist wedding"
+          />
         </div>
       </div>
       <Button
@@ -96,7 +100,7 @@ const images = [
   {
     id: 1,
     src: new URL(
-      "../assets/humanist-weddings/realization-1.jpg",
+      "../assets/humanist-weddings/realization-1.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 1",
@@ -104,7 +108,7 @@ const images = [
   {
     id: 2,
     src: new URL(
-      "../assets/humanist-weddings/realization-2.jpg",
+      "../assets/humanist-weddings/realization-2.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 2",
@@ -112,7 +116,7 @@ const images = [
   {
     id: 3,
     src: new URL(
-      "../assets/humanist-weddings/realization-3.jpg",
+      "../assets/humanist-weddings/realization-3.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 3",
@@ -120,7 +124,7 @@ const images = [
   {
     id: 4,
     src: new URL(
-      "../assets/humanist-weddings/realization-4.jpg",
+      "../assets/humanist-weddings/realization-4.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 4",
@@ -128,7 +132,7 @@ const images = [
   {
     id: 5,
     src: new URL(
-      "../assets/humanist-weddings/realization-5.jpg",
+      "../assets/humanist-weddings/realization-5.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 5",
@@ -136,7 +140,7 @@ const images = [
   {
     id: 6,
     src: new URL(
-      "../assets/humanist-weddings/realization-6.jpg",
+      "../assets/humanist-weddings/realization-6.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 6",
@@ -144,7 +148,7 @@ const images = [
   {
     id: 7,
     src: new URL(
-      "../assets/humanist-weddings/realization-7.jpg",
+      "../assets/humanist-weddings/realization-7.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 7",
@@ -152,7 +156,7 @@ const images = [
   {
     id: 8,
     src: new URL(
-      "../assets/humanist-weddings/realization-8.jpg",
+      "../assets/humanist-weddings/realization-8.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 8",
@@ -160,7 +164,7 @@ const images = [
   {
     id: 9,
     src: new URL(
-      "../assets/humanist-weddings/realization-9.jpg",
+      "../assets/humanist-weddings/realization-9.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 9",
@@ -168,7 +172,7 @@ const images = [
   {
     id: 10,
     src: new URL(
-      "../assets/humanist-weddings/realization-10.jpeg",
+      "../assets/humanist-weddings/realization-10.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 10",
@@ -176,7 +180,7 @@ const images = [
   {
     id: 11,
     src: new URL(
-      "../assets/humanist-weddings/realization-11.jpg",
+      "../assets/humanist-weddings/realization-11.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 11",
@@ -184,7 +188,7 @@ const images = [
   {
     id: 12,
     src: new URL(
-      "../assets/humanist-weddings/realization-12.jpg",
+      "../assets/humanist-weddings/realization-12.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 12",
@@ -192,7 +196,7 @@ const images = [
   {
     id: 13,
     src: new URL(
-      "../assets/humanist-weddings/realization-13.jpeg",
+      "../assets/humanist-weddings/realization-13.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 13",
@@ -200,7 +204,7 @@ const images = [
   {
     id: 14,
     src: new URL(
-      "../assets/humanist-weddings/realization-14.jpg",
+      "../assets/humanist-weddings/realization-14.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 14",
@@ -208,7 +212,7 @@ const images = [
   {
     id: 15,
     src: new URL(
-      "../assets/humanist-weddings/realization-15.jpeg",
+      "../assets/humanist-weddings/realization-15.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 15",
@@ -216,7 +220,7 @@ const images = [
   {
     id: 17,
     src: new URL(
-      "../assets/humanist-weddings/realization-17.jpeg",
+      "../assets/humanist-weddings/realization-17.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 17",
@@ -224,7 +228,7 @@ const images = [
   {
     id: 18,
     src: new URL(
-      "../assets/humanist-weddings/realization-18.jpeg",
+      "../assets/humanist-weddings/realization-18.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 18",
@@ -232,7 +236,7 @@ const images = [
   {
     id: 19,
     src: new URL(
-      "../assets/humanist-weddings/realization-19.jpg",
+      "../assets/humanist-weddings/realization-19.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 19",
@@ -240,7 +244,7 @@ const images = [
   {
     id: 20,
     src: new URL(
-      "../assets/humanist-weddings/realization-20.jpg",
+      "../assets/humanist-weddings/realization-20.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 20",
@@ -248,7 +252,7 @@ const images = [
   {
     id: 21,
     src: new URL(
-      "../assets/humanist-weddings/realization-21.jpg",
+      "../assets/humanist-weddings/realization-21.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 21",
@@ -256,7 +260,7 @@ const images = [
   {
     id: 22,
     src: new URL(
-      "../assets/humanist-weddings/realization-22.jpg",
+      "../assets/humanist-weddings/realization-22.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 22",
@@ -264,7 +268,7 @@ const images = [
   {
     id: 23,
     src: new URL(
-      "../assets/humanist-weddings/realization-23.jpg",
+      "../assets/humanist-weddings/realization-23.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 23",
@@ -272,7 +276,7 @@ const images = [
   {
     id: 24,
     src: new URL(
-      "../assets/humanist-weddings/realization-24.jpg",
+      "../assets/humanist-weddings/realization-24.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 24",
@@ -280,7 +284,7 @@ const images = [
   {
     id: 25,
     src: new URL(
-      "../assets/humanist-weddings/realization-25.jpg",
+      "../assets/humanist-weddings/realization-25.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 25",
@@ -288,7 +292,7 @@ const images = [
   {
     id: 26,
     src: new URL(
-      "../assets/humanist-weddings/realization-26.jpg",
+      "../assets/humanist-weddings/realization-26.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 26",
@@ -296,7 +300,7 @@ const images = [
   {
     id: 27,
     src: new URL(
-      "../assets/humanist-weddings/realization-27.jpg",
+      "../assets/humanist-weddings/realization-27.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 27",
@@ -304,7 +308,7 @@ const images = [
   {
     id: 28,
     src: new URL(
-      "../assets/humanist-weddings/realization-28.jpg",
+      "../assets/humanist-weddings/realization-28.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 28",
@@ -312,7 +316,7 @@ const images = [
   {
     id: 29,
     src: new URL(
-      "../assets/humanist-weddings/realization-29.jpg",
+      "../assets/humanist-weddings/realization-29.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 29",
@@ -320,7 +324,7 @@ const images = [
   {
     id: 30,
     src: new URL(
-      "../assets/humanist-weddings/realization-30.jpg",
+      "../assets/humanist-weddings/realization-30.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 30",
@@ -328,7 +332,7 @@ const images = [
   {
     id: 31,
     src: new URL(
-      "../assets/humanist-weddings/realization-31.jpg",
+      "../assets/humanist-weddings/realization-31.webp",
       import.meta.url
     ).href,
     alt: "Image from gallery 31",
@@ -478,6 +482,8 @@ const toggleQuestion = (index) => {
 
       &__btn {
         margin-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
       }
     }
 

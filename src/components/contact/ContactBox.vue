@@ -44,9 +44,9 @@ const props = defineProps({
   align-items: center;
   text-decoration: none;
   background-color: $gray-color;
-  padding: 30px 20px;
+  padding: 1.875rem 1.25rem;
   color: #000;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   transition: transform 0.3s ease;
   transform: translateY(0);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -57,7 +57,7 @@ const props = defineProps({
 
   &__icon-container {
     &__icon {
-      font-size: 40px;
+      font-size: 2.5rem;
       color: $primary-color;
     }
   }

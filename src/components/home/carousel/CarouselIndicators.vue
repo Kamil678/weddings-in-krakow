@@ -25,7 +25,6 @@ defineEmits(["switchImage"]);
   bottom: 1em;
   left: 50%;
   transform: translateX(-50%);
-  //background-color: #fff;
   z-index: 2;
 
   &__item {

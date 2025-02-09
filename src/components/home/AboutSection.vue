@@ -96,6 +96,7 @@ import Button from "../shared/Button.vue";
       width: 100%;
       img {
         width: 100%;
+        border-radius: 10px;
       }
 
       @media (min-width: $md-screen) {

@@ -8,27 +8,27 @@ const slides = [
   {
     id: 1,
     src: new URL("../../assets/home/slides/slide-1.webp", import.meta.url).href,
-    alt: "The newlyweds cuddling",
+    alt: "The newlyweds kissing in front of firecrackers",
   },
   {
     id: 2,
     src: new URL("../../assets/home/slides/slide-2.webp", import.meta.url).href,
-    alt: "The newlyweds first dance",
+    alt: "The newlyweds taking their vows",
   },
   {
     id: 3,
     src: new URL("../../assets/home/slides/slide-3.webp", import.meta.url).href,
-    alt: "The newlyweds in a car",
+    alt: "The newlyweds kissing in front of guests",
   },
   {
     id: 4,
     src: new URL("../../assets/home/slides/slide-4.webp", import.meta.url).href,
-    alt: "The newlyweds' car",
+    alt: "The bride and groom in the wedding hall",
   },
   {
     id: 5,
     src: new URL("../../assets/home/slides/slide-5.webp", import.meta.url).href,
-    alt: "The newlyweds' car",
+    alt: "The newlyweds first dance",
   },
 ];
 </script>

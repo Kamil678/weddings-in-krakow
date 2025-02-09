@@ -89,7 +89,7 @@
     <div class="contact-form__buttons">
       <button
         type="submit"
-        class="contact-form__buttons__submit-button"
+        class="contact-form__buttons__submit-button btn"
         :disabled="isSubmitting"
       >
         <span v-if="isSubmitting">{{ $t("contactSending") }}</span>
@@ -284,43 +284,27 @@ const resetForm = () => {
     gap: 1.5rem;
     margin-top: 1rem;
 
-    &__submit-button,
     &__reset-button {
       border: none;
-      font-size: 16px;
-      line-height: 20px;
+      font-size: 18px;
+      line-height: 22px;
       cursor: pointer;
-      font-weight: 500;
-
-      @media (min-width: $md-screen) {
-        font-size: 18px;
-        line-height: 22px;
-      }
-    }
-
-    &__submit-button {
-      background-color: $primary-color;
-      width: fit-content;
-      padding: 15px 40px;
-      border-radius: 30px;
-      color: #fff;
-
-      &:hover {
-        opacity: 0.9;
-      }
-    }
-
-    &__reset-button {
+      font-weight: 600;
       color: $primary-color;
       background-color: transparent;
-      border: 1px solid $primary-color;
+      border: 2px solid $primary-color;
       border-radius: 30px;
-      padding: 15px 40px;
+      padding: 15px 50px;
 
       &:hover {
         background-color: $primary-color;
         color: #fff;
       }
+    }
+
+    &__submit-button {
+      padding-left: 50px;
+      padding-right: 50px;
     }
 
     @media (min-width: $sm-screen) {
