@@ -3,7 +3,7 @@
     <div class="footer__contact-container">
       <div class="footer__contact-container__links">
         <router-link
-          v-for="(link, index) in footerLinks"
+          v-for="(link, index) in filteredFooterLinks"
           :key="index"
           :to="link.to"
           class="footer__contact-container__links__link"
@@ -45,9 +45,13 @@
           <i
             class="fa-solid fa-location-dot footer__contact-container__contact__data__icon"
           ></i>
-          <p class="footer__contact-container__contact__data__static">
+          <a
+            href="https://maps.app.goo.gl/2xxHKotRixZw9piSA"
+            target="_blank"
+            class="footer__contact-container__contact__data__link"
+          >
             Żabiniec, Kraków
-          </p>
+          </a>
         </div>
       </div>
     </div>
@@ -62,8 +66,12 @@
   </footer>
 </template>
 <script setup>
+import { computed } from "vue";
 import Logo from "./Logo.vue";
 import SocialMediaLinks from "./SocialMediaLinks.vue";
+import { useI18n } from "vue-i18n";
+
+const { locale, t } = useI18n();
 
 const footerLinks = [
   { to: "/", label: "navHome" },
@@ -103,6 +111,13 @@ const socialMediaLinks = [
     label: "YouTube",
   },
 ];
+
+const filteredFooterLinks = computed(() => {
+  if (locale.value === "pl") {
+    return footerLinks;
+  }
+  return footerLinks.filter((link) => link.to !== "/offer-halls");
+});
 </script>
 
 <style lang="scss">

@@ -87,9 +87,15 @@ import Button from "../shared/Button.vue";
       &__image {
         width: 100%;
         padding: 0;
+
         img {
           width: 100%;
           border-radius: 10px;
+          transition: transform 0.4s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
         }
 
         @media (min-width: $md-screen) {

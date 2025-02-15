@@ -54,10 +54,12 @@ const routes = [
     },
   },
   {
-    path: "/offer",
+    path: "/:path(offer|oferta)",
     name: "Offer",
     component: Offer,
     meta: {
+      plPath: "/oferta",
+      enPath: "/offer",
       metaTags: {
         pl: {
           title: "Oferta - Weddings in Krakow",
@@ -98,10 +100,12 @@ const routes = [
     },
   },
   {
-    path: "/humanist-weddings",
+    path: "/:path(humanist-weddings|sluby-humanistyczne)",
     name: "HumanistWeddings",
     component: HumanistWeddings,
     meta: {
+      plPath: "/sluby-humanistyczne",
+      enPath: "/humanist-weddings",
       metaTags: {
         pl: {
           title: "Śluby Humanistyczne - Weddings in Krakow",
@@ -142,10 +146,12 @@ const routes = [
     },
   },
   {
-    path: "/wedding-day-coordination",
+    path: "/:path(wedding-day-coordination|koordynacja-dnia-slubu)",
     name: "WeddingDayCoordination",
     component: WeddingDayCoordination,
     meta: {
+      plPath: "/koordynacja-dnia-slubu",
+      enPath: "/wedding-day-coordination",
       metaTags: {
         pl: {
           title: "Koordynacja Dnia Ślubu - Weddings in Krakow",
@@ -186,10 +192,12 @@ const routes = [
     },
   },
   {
-    path: "/portfolio",
+    path: "/:path(portfolio|portfolio)",
     name: "Portfolio",
     component: Portfolio,
     meta: {
+      plPath: "/portfolio",
+      enPath: "/portfolio",
       metaTags: {
         pl: {
           title: "Portfolio - Weddings in Krakow",
@@ -230,10 +238,12 @@ const routes = [
     },
   },
   {
-    path: "/offer-halls",
+    path: "/:path(offer-halls|oferta-dla-sal)",
     name: "OfferHalls",
     component: OfferHalls,
     meta: {
+      plPath: "/oferta-dla-sal",
+      enPath: "/offer-halls",
       metaTags: {
         pl: {
           title: "Oferta Dla Sal - Weddings in Krakow",
@@ -274,10 +284,12 @@ const routes = [
     },
   },
   {
-    path: "/opinions",
+    path: "/:path(opinions|opinie)",
     name: "Opinions",
     component: Opinions,
     meta: {
+      plPath: "/opinie",
+      enPath: "/opinions",
       metaTags: {
         pl: {
           title: "Opinie - Weddings in Krakow",
@@ -318,10 +330,12 @@ const routes = [
     },
   },
   {
-    path: "/contact",
+    path: "/:path(contact|kontakt)",
     name: "Contact",
     component: Contact,
     meta: {
+      plPath: "/kontakt",
+      enPath: "/contact",
       metaTags: {
         pl: {
           title: "Kontakt - Weddings in Krakow",
@@ -381,11 +395,30 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const selectedLanguage = localStorage.getItem("language") || "pl";
 
+  const routeMeta = to.meta;
+  if (routeMeta.plPath && routeMeta.enPath) {
+    const currentPath = to.path;
+    const correctPath =
+      selectedLanguage === "pl" ? routeMeta.plPath : routeMeta.enPath;
+
+    if (currentPath !== correctPath) {
+      return next(correctPath);
+    }
+  }
+
   if (to.path === "/offer-halls" && selectedLanguage !== "pl") {
     return next({ path: "/" });
   }
 
   next();
 });
+
+export const getCorrectPath = (name) => {
+  const route = routes.find((r) => r.name === name);
+  if (!route || !route.meta || !route.meta.plPath) return "";
+
+  const selectedLanguage = localStorage.getItem("language") || "pl";
+  return selectedLanguage === "pl" ? route.meta.plPath : route.meta.enPath;
+};
 
 export default router;

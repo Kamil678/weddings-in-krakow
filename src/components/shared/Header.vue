@@ -33,9 +33,10 @@
           class="header__nav__list__element"
         >
           <router-link
-            :to="link.path"
+            :to="getLocalizedPath(link.name)"
             class="header__nav__list__link"
-            active-class="active"
+            :exact="link.name === 'Home'"
+            :class="{ active: isLinkActive(link) }"
             @click="toggleMenu"
             >{{ $t(link.label) }}</router-link
           >
@@ -50,30 +51,49 @@
 import Logo from "./Logo.vue";
 import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
+import { useRoute } from "vue-router";
 import LanguageDropdown from "./LanguageDropdown.vue";
 import { debounce } from "lodash";
+import { getCorrectPath } from "@/router";
 
 const openMenu = ref(false);
 const isOpenChangeLanguageMenu = ref(false);
+const route = useRoute();
 
 const { locale, t } = useI18n();
 
 const navLinks = [
-  { path: "/", label: "navHome" },
-  { path: "/offer", label: "navOffer" },
-  { path: "/portfolio", label: "navPortfolio" },
-  { path: "/opinions", label: "navOpinions" },
-  { path: "/humanist-weddings", label: "navHumanistWeddings" },
-  { path: "/wedding-day-coordination", label: "navWeddingDayCoordination" },
-  { path: "/offer-halls", label: "navOfferHalls" },
-  { path: "/contact", label: "navContact" },
+  { name: "Home", label: "navHome" },
+  { name: "Offer", label: "navOffer" },
+  { name: "Portfolio", label: "navPortfolio" },
+  { name: "Opinions", label: "navOpinions" },
+  { name: "HumanistWeddings", label: "navHumanistWeddings" },
+  { name: "WeddingDayCoordination", label: "navWeddingDayCoordination" },
+  { name: "OfferHalls", label: "navOfferHalls" },
+  { name: "Contact", label: "navContact" },
 ];
+
+const getLocalizedPath = (name) => {
+  if (name === "Home") return "/";
+  return getCorrectPath(name);
+};
+
+const isLinkActive = (link) => {
+  if (link.name === "Home") {
+    return route.path === "/";
+  }
+
+  const currentPath = route.path.toLowerCase();
+  const linkPath = getLocalizedPath(link.name).toLowerCase();
+
+  return currentPath === linkPath;
+};
 
 const filteredNavLinks = computed(() => {
   if (locale.value === "pl") {
     return navLinks;
   }
-  return navLinks.filter((link) => link.path !== "/offer-halls");
+  return navLinks.filter((link) => link.name !== "OfferHalls");
 });
 
 const closeMenu = debounce(() => {
@@ -85,7 +105,6 @@ const toggleMenu = () => {
   openMenu.value = !openMenu.value;
 };
 </script>
-
 <style lang="scss">
 .header {
   position: fixed;
@@ -127,6 +146,8 @@ const toggleMenu = () => {
       gap: 1.5rem;
       list-style: none;
       color: white;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
       @media (min-width: $sm-screen) {
         transform: translateY(-100%);

@@ -198,6 +198,8 @@ const toggleText = (index) => {
 
 <style lang="scss">
 .opinions {
+  overflow-x: hidden; // Dodaj to
+
   &__more-opinions {
     display: flex;
     align-items: center;
