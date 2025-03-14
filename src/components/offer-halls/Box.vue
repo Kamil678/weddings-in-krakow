@@ -24,7 +24,7 @@
         Chcesz dowiedzieć się więcej? Sprawdź pełną ofertę
       </p>
       <a
-        href="/public/oferta-dla-sal.pdf"
+        href="/oferta-dla-sal.pdf"
         target="_blank"
         class="box__more-info__btn btn"
       >

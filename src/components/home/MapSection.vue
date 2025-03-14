@@ -9,6 +9,16 @@
       src="../../assets/home/map.png"
       alt="Map of where I have performed weddings"
     />
+    <a
+      href="https://www.weselezklasa.pl/ogloszenia-weselne/powierz-nam-organizacje-swojego-wesela,44825/"
+      target="_blank"
+      title="Weddings in Krakow Marta Wątor"
+      class="advertisement"
+      ><img
+        src="https://www.weselezklasa.pl/banery/Weselezklasa/button_rekomendacji_230x120_violet_on_grey.png"
+        alt="Weddings in Krakow Marta Wątor"
+        border="0"
+    /></a>
   </section>
 </template>
 
@@ -83,6 +93,14 @@ onMounted(() => {
 
   img {
     width: 100%;
+  }
+
+  .advertisement {
+    margin-top: 6.125rem;
+
+    img {
+      border-radius: 10px;
+    }
   }
 
   @media (min-width: $md-screen) {

@@ -1,0 +1,33 @@
+RewriteEngine On
+
+Redirect 301 /en/home-2/ https://weddingsinkrakow.com/
+Redirect 301 /en/offer/ https://weddingsinkrakow.com/offer
+Redirect 301 /en/blog-2/ https://weddingsinkrakow.com/
+Redirect 301 /en/contact/ https://weddingsinkrakow.com/contact
+Redirect 301 /fr/accueil/ https://weddingsinkrakow.com/
+Redirect 301 /fr/loffre/ https://weddingsinkrakow.com/offer
+Redirect 301 /fr/blog-3/ https://weddingsinkrakow.com/
+Redirect 301 /fr/contact-2/ https://weddingsinkrakow.com/contact
+Redirect 301 /de/home-4/ https://weddingsinkrakow.com/
+Redirect 301 /de/angebot/ https://weddingsinkrakow.com/offer
+Redirect 301 /de/blog-4/ https://weddingsinkrakow.com/
+Redirect 301 /de/kontakt-2/ https://weddingsinkrakow.com/contact
+Redirect 301 /it/home-3/ https://weddingsinkrakow.com/
+Redirect 301 /it/offerta/ https://weddingsinkrakow.com/offer
+Redirect 301 /it/blog-5/ https://weddingsinkrakow.com/
+Redirect 301 /it/contatto/ https://weddingsinkrakow.com/contact
+Redirect 301 /weddings-in-krakow-team/ https://weddingsinkrakow.com/
+Redirect 301 /blog/ https://weddingsinkrakow.com/
+
+RewriteCond %{HTTP_HOST} ^weddingsinkrakow\.pl$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.weddingsinkrakow\.pl$
+RewriteRule ^(.*)$ https://weddingsinkrakow.com/$1 [R=301,L]
+
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+DirectoryIndex index.html
+Options -Indexes
