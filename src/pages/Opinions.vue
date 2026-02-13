@@ -3,7 +3,7 @@
     <h1 class="page__title">{{ $t("navOpinions") }}</h1>
     <section class="opinions__boxes">
       <OpinionBox
-        v-for="(opinion, index) in opinions"
+        v-for="(opinion, index) in sortedOpinions"
         :key="opinion.id"
         :opinion="opinion"
         :index="index"
@@ -19,7 +19,7 @@
   </main>
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import OpinionBox from "../components/opinions/OpinionBox.vue";
 
 const opinions = [
@@ -276,6 +276,12 @@ const opinions = [
       "Nie wiemy nawet, od czego zacząć!\nMarta zorganizowała i koordynowała nasz polsko-angielski ślub 31.07.2025 – i możemy z pełnym przekonaniem powiedzieć, że była to najlepsza decyzja, jaką mogliśmy podjąć. Dzięki niej przygotowania przebiegły bezstresowo, a sam dzień ślubu był po prostu magiczny.\nMarta potrafi zdziałać cuda – podejrzewamy nawet, że udało jej się zorganizować słoneczną pogodę pomiędzy deszczowymi dniami!\nTo nie tylko profesjonalistka z ogromnym doświadczeniem i wiedzą, ale też ciepła, serdeczna osoba, zawsze dostępna i gotowa pomóc. Marta mówi w kilku językach, co było dla nas ogromnym ułatwieniem przy organizacji dwujęzycznego ślubu.\nJeśli ktoś szuka wsparcia przy planowaniu ślubu – Marta to absolutnie najlepszy wybór!\nMonika\n\nMarta was just fantastic from day one in organising our wedding day and, as a couple, she took all the pressure off us so we were able to fully enjoy our day. Our family and friends all commented on how wonderful the day was, how beautiful the venue and set up was, and how smoothly everything went, which was all a reflection of her tireless work. From knowing such a wide range of the best decorators, florists and caterers, to making use of her contacts at venues to get the best deal, she was absolutely brilliant and it meant we simply had to choose the best options for us. She covered everything with great attention, from the smallest detail to the biggest of elements on the day, making a busy and exceptionally complicated organising process seem incredibly smokth and easy. Without her, we simply would not have had such a memorable day, and we can’t thank her enough for that.\nJames",
   },
 ];
+
+const sortedOpinions = computed(() => {
+  const priority = opinions.filter((o) => o.id >= 24 && o.id <= 36);
+  const rest = opinions.filter((o) => o.id < 24 || o.id > 36);
+  return [...priority, ...rest];
+});
 
 const activeOpinion = ref(null);
 
