@@ -2,13 +2,10 @@
   <section class="map-section">
     <h3 class="map-section__title">
       {{ $t("homeMapSectionText1") }}
-      <span class="count" ref="count1">0</span> {{ $t("homeMapSectionText2") }}
-      <span class="count" ref="count2">0</span> {{ $t("homeMapSectionText3") }}
+      <span class="count" ref="count1">0</span> {{ $t("homeMapSectionText2") }} <span class="count" ref="count2">0</span>
+      {{ $t("homeMapSectionText3") }}
     </h3>
-    <img
-      src="../../assets/home/map.png"
-      alt="Map of where I have performed weddings"
-    />
+    <img src="../../assets/home/map.png" alt="Map of where I have performed weddings" />
     <a
       href="https://www.weselezklasa.pl/ogloszenia-weselne/powierz-nam-organizacje-swojego-wesela,44825/"
       target="_blank"
@@ -30,7 +27,7 @@ const count2 = ref(null);
 
 function animateNumber(element, target) {
   let current = 0;
-  const increment = Math.ceil(target / 100);
+  const increment = Math.ceil(target / 40);
   const interval = setInterval(() => {
     current += increment;
     if (current >= target) {
@@ -38,22 +35,22 @@ function animateNumber(element, target) {
       clearInterval(interval);
     }
     element.textContent = current;
-  }, 50);
+  }, 30);
 }
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        animateNumber(count1.value, 172);
-        animateNumber(count2.value, 31);
+        animateNumber(count1.value, 212);
+        animateNumber(count2.value, 34);
         observer.unobserve(entry.target);
       }
     });
   },
   {
     threshold: 0.5,
-  }
+  },
 );
 
 onMounted(() => {

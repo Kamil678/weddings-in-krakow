@@ -12,12 +12,9 @@
       />
     </section>
     <div class="opinions__more-opinions">
-      <a
-        href="https://g.page/r/CZ7k7KfNH0txEAE/review"
-        target="_blank"
-        class="opinions__more-opinions__btn"
-        >{{ $t("opinionsSeeMoreOpinions") }}</a
-      >
+      <a href="https://g.page/r/CZ7k7KfNH0txEAE/review" target="_blank" class="opinions__more-opinions__btn">{{
+        $t("opinionsSeeMoreOpinions")
+      }}</a>
     </div>
   </main>
 </template>
@@ -186,6 +183,97 @@ const opinions = [
     img: new URL("../assets/opinions/opinion-23.webp", import.meta.url).href,
     content:
       "I reached out to Marta 15 months in advance of our wedding. She works very fast to identify possible vendors and venues to enable decision making, where we had our main contracts locked in within the first 4 months of planning. With Marta, no is not an option - any idea is followed with options for execution. She is your partner since day 1. 80% of our guests were flying into Poland from the USA and have said that this is the best wedding that they have attended. I'm fortunate to not only have worked with a resourceful and well organized planner that has made planning a wedding from across the Atlantic a breeze, but also to walk away a new life time friend in Krakow. Highly recommend working with her!",
+  },
+  {
+    id: 24,
+    name: "Paulina & Remek",
+    img: new URL("../assets/opinions/opinion-24.webp", import.meta.url).href,
+    content:
+      "Nasze wesele odbywało się za granicą, dlatego przygotowania były wyjątkowo wymagające. Dzięki Marcie cały proces stał się spokojniejszy i uporządkowany, a finał przerósł nasze oczekiwania. Każdy detal został dopracowany, nasze pomysły zostały świetnie zrozumiane i pięknie zrealizowane. Profesjonalizm, uśmiech i ogromne zaangażowanie sprawiły, że mogliśmy cieszyć się tym dniem w pełni – bez stresu i bez obaw. Polecamy z całego serca każdemu, kto marzy o perfekcyjnie zorganizowanym weselu.",
+  },
+  {
+    id: 25,
+    name: "Rachael & Ron",
+    img: new URL("../assets/opinions/opinion-25.webp", import.meta.url).href,
+    content:
+      "We cannot thank Marta, enough for planning our Krakow wedding. We felt supported throughout the entire planning process. Planning a wedding from another country seemed daunting at first, but Marta made it less intimidating and took care of all of our requests.\n\nMarta listened closely to our vision, offered creative ideas, and connected us with the best local vendors. On the wedding day, everything flowed perfectly allowing us and our guests to be fully present and enjoy every moment without stress. We were even ahead of schedule for most of the day! Marta went above and beyond for us and even helped arrange the custom creation of my Polish costume.\n\nWhat impressed us most was Marta’s ability to communicate in a timely manner. We always felt like we were in the best hands, and the result was a day that was even more beautiful than we imagined.\n\nIf you are considering a destination wedding, we highly recommend Weddings in Krakow. Their expertise, organization, and care truly made our destination dream wedding possible.",
+  },
+  {
+    id: 26,
+    name: "Agnieszka & Nicholas",
+    img: new URL("../assets/opinions/opinion-26.webp", import.meta.url).href,
+    content:
+      "Marta była najlepszym wyborem naszego wesela. Patrząc wstecz nie wyobrażamy sobie tego dnia bez niej. Jest niesamowicie otwartą i komunikatywną osobą, która swoją pracę wykonuje perfekcyjnie. W razie wystąpienia jakichkolwiek problemów działa bardzo szybko i efektywnie. Dzięki niej w dniu naszego wesela mogliśmy się skupić na sobie bez zmartwień. Ponadto jest niezmiernie ciepłą i kochaną osobą, dodatkowo niesamowicie profesjonalna. Polecamy każdej parze młodej, która planuje swój ślub ❤️",
+  },
+  {
+    id: 27,
+    name: "Kanika & Sławek",
+    img: new URL("../assets/opinions/opinion-27.webp", import.meta.url).href,
+    content:
+      "Cieszymy się, że trafiliśmy na Martę (Wedding in Kraków)!\n\nOrganizacja ślubu z zagranicy wydawała się na początku bardzo przytłaczająca. Początkowo zatrudniliśmy Martę jedynie jako osobę prowadzącą ceremonię, ale kiedy zaczęliśmy mieć trudności ze znalezieniem odpowiednich usługodawców, zdecydowaliśmy się skorzystać z jej pełnej usługi koordynacji — i była to najlepsza decyzja, jaką mogliśmy podjąć.\n\nPomogła nam znaleźć, skoordynować i negocjować z florystką, makijażystką, fryzjerką i artystami. Marta odpowiadała niemal natychmiast, dzięki czemu wszystko przebiegało płynnie. Wzięła cały stres na siebie, a my mogliśmy cieszyć się tym wyjątkowym czasem.\n\nCeremonia była piękna i dopracowana w każdym szczególe.\nMarta sprawiła, że nasz ślub był dokładnie taki, jaki powinien być — radosny i bezstresowy. Dziękujemy Ci, Marto!",
+  },
+  {
+    id: 28,
+    name: "Dominika & Freddie",
+    img: new URL("../assets/opinions/opinion-28.webp", import.meta.url).href,
+    content:
+      "Z całego serca polecam Martę, współpraca z nią to była najlepsza decyzja, jaką podjęliśmy planując nasz ślub!\nByła niesamowicie kontaktowa, zawsze błyskawicznie odpowiadała na wiadomości i potrafiła znaleźć rozwiązanie dla każdej sytuacji, zawsze ze spokojem i uśmiechem.\nMarta nie tylko koordynowała, ale także poprowadziła ceremonię humanistyczna i pomogła w organizacji części wesela, dzięki czemu wszystko było dopięte na ostatni guzik. W dniu ślubu wszystko przebiegło idealnie, mogłam w pełni się cieszyć się tym dniem, bo wiedziałam, że Marta czuwa nad każdym szczegółem. Wszystkie kwestie organizacyjne miała pod pełną kontrolą, a ewentualne problemy znikały, zanim ktokolwiek zdążył je zauważyć.\nDodatkowo wszyscy podwykonawcy, których nam poleciła, okazali się fantastyczni.\nMarta to ciepła, pozytywna i niezwykle kompetentna osoba, którą z całego serca polecam każdej przyszłej Parze Młodej ❤️",
+  },
+  {
+    id: 29,
+    name: "Ewa & Wojtek",
+    img: new URL("../assets/opinions/opinion-29.webp", import.meta.url).href,
+    content:
+      "Na Weddings in Krakow trafiłam przez przypadek, zachęcona pozytywnymi opiniami przeczytanymi w sieci. Zaczęło się od krótkiej rozmowy telefonicznej z Martą. Przedstawiłam po krótce naszą wizję ślubu i wesela i zaznaczyłam, że potrzebujemy kompleksowej obsługi całego procesu. Już wtedy czułam, że dobrze trafiłam. Po kilku dniach spotkaliśmy się z Martą „na żywo” i oboje wiedzieliśmy, że chcemy oddać sprawy w jej ręce. Później zaczęły się czary…. Marta przesłała nam listę lokalizacji, które mogłyby spełnić nasze oczekiwania co do sali weselnej. Nasz wybór nie ułatwił jej zadania, gdyż całość wydarzeń miała mieć miejsce poza województwem małopolskim, co oznaczało poszukiwanie zupełnie nowych usługodawców - nigdy nie odczuliśmy, że stanowiło to problem. Marta ogarniała dosłownie wszystko co było związane z organizacją ślubu i wesela. Podsyłała nam gotowe rozwiązania oczekując z naszej strony jedynie finalnej decyzji. Gdy nadal nie byliśmy przekonani, szukała alternatyw. Nasze pomysły i odczucia były przez nią stawiane zawsze jako priorytet. Mogliśmy skupić się na swoich bieżących sprawach, a proces ślubu i wesela szedł do przodu aż do naszego Wielkiego Dnia.\nDzień ślubu i wesela to była istna magia! Dzięki Marcie mogliśmy się czuć jak najważniejsi Goście na swoim przyjęciu i cieszyć się wspólnymi chwilami z naszymi bliskimi. Wszystko toczyło się zgodnie z założonym scenariuszem bez żadnych nerwowych sytuacji.\nSzczerze podziwiam Pary Młode, które same chcą zajmować się wszystkim co jest związane z ich weselem - to trudne, ale możliwe. Natomiast wszystkim, którzy chcą skorzystać z pomocy zewnętrznej z całego serca polecam Martę i Weddings in Krakow. Marta jest profesjonalistką w pełnym znaczeniu tego słowa. Oddana temu co robi, zaangażowana, pełna empatii i zrozumienia dla oczekiwań Pary Młodej. Dzięki jej wsparciu my mogliśmy cieszyć się najlepszymi chwilami bez stresu i poczucia, że coś zostało niedopilnowane. Gdybym miała możliwość cofnąć czas i zacząć przygotowania do ślubu raz jeszcze, nie zmieniłabym nic – znów zaczęłabym od wyboru Weddings in Krakow.",
+  },
+  {
+    id: 30,
+    name: "Angelika & Andrzej",
+    img: new URL("../assets/opinions/opinion-30.webp", import.meta.url).href,
+    content:
+      "Marta, ah Marta! Cudowna, mega pozytywna kobitka. Dzięki je koordynacji, dzień ślubu był spokojny, dopracowany, a ja jako Panna Młoda w ogóle nie stresowałam się tym dniem - żyłam chwilą, dzięki temu Pan Młody też mógł bawić się bez napięcia. Świetna komunikacja od początku do końca - bo koordynacja to nie tylko jedno spotkanie, a dość intensywny czas przed, dopracowywanie szczegółów. Jeśli jeszcze zastanawiasz się czy wedding planner to dobry pomysł to ja bez zastanowienia napiszę, że tak! Polecam Martę z całego serca!",
+  },
+  {
+    id: 31,
+    name: "Jenni & Maciek",
+    img: new URL("../assets/opinions/opinion-31.webp", import.meta.url).href,
+    content:
+      "From the very beginning Marta was so helpful & reassuring! We got so many comments about how smoothly the wedding went - Marta dealt with everything from the vendors to the venue and all the details inbetween ❤️\n\nShe supported us through the whole process, was so kind, friendly, organised - and had a great instincts & great taste which helped make our wedding turn out more beautiful than I could have imagined!!\n\nThank you so much Marta, we couldn't have done it without you ❤️",
+  },
+  {
+    id: 32,
+    name: "Paulina & Daniel",
+    img: new URL("../assets/opinions/opinion-32.webp", import.meta.url).href,
+    content:
+      "Chciałabym z całego serca polecić naszą koordynatorkę dnia ślubu, Martę ❤️\nPełen profesjonalizm, niesamowita życzliwość i ogromne doświadczenie to tylko niektóre z jej zalet. Kontakt z nią był fantastyczny. Odpowiedzi na nasze pytania przychodziły niemal natychmiast, a każde wątpliwości były rozwiewane z spokojem.\n\nMarta pomogła nam również w kwestiach wykraczających poza sam dzień ślubu – między innymi w organizacji tłumaczenia dokumentów do USC, a także pełniła rolę tłumacza dla mojego Męża, który pochodzi z UK. Podczas wizyty w urzędzie napotkaliśmy niespodziewany problem – jeden z paragrafów nie został przetłumaczony. Marta zareagowała błyskawicznie i z pełnym spokojem zorganizowała odrazu tłumacza, dzięki czemu cała sprawa została sprawnie rozwiązana w przeciągu godziny.\n\nW dniu wesela mogliśmy skupić się wyłącznie na przeżywaniu tych wyjątkowych chwil - wszystko inne było pod jej czujnym okiem. Dzięki niej nie musieliśmy się martwić o żadne szczegóły, bo wszystko zostało dopięte na ostatni guzik.\nTo osoba, której można całkowicie zaufać – wykonuje swoją pracę z pasją, zaangażowaniem i niesamowitą dbałością o każdy detal.\nZ całego serca dziękujemy i polecamy każdej przyszłej Parze Młodej!",
+  },
+  {
+    id: 33,
+    name: "Marcjanna & James",
+    img: new URL("../assets/opinions/opinion-33.webp", import.meta.url).href,
+    content:
+      "Nie mieliśmy ani czasu, ani głowy do organizacji ślubu i wesela, ale Marta ogarnęła wszystko perfekcyjnie – od przygotowań aż po koordynację dnia ślubu. Dzięki niej wszystko było dopięte na ostatni guzik, a my mogliśmy cieszyć się każdą chwilą bez stresu.\nPomogła nam znaleźć najlepszych podwykonawców, przypominała o wszystkim, o czym dawno byśmy zapomnieli, i zadbała o każdy najmniejszy szczegół, o którym nie mieliśmy pojęcia, że istnieje.\nDodatkowo Marta świetnie poradziła sobie z osobami, które nie były łatwe we współpracy – z klasą, spokojem i skutecznie. Pełen profesjonalizm, ogromna cierpliwość i ogromne wsparcie na każdym kroku.\nZ całego serca polecamy każdemu, kto chce mieć piękny, spokojny ślub i święty spokój w trakcie przygotowań! ❤️",
+  },
+  {
+    id: 34,
+    name: "Natalia & Tomek",
+    img: new URL("../assets/opinions/opinion-34.webp", import.meta.url).href,
+    content:
+      "Jeżeli ktoś jeszcze się zastanawia czy warto skorzystać z pomocy profesjonalnej wedding plannerki przy organizacji ślubu to po współpracy z Martą mogę śmiało powiedzieć że zdecydowanie TAK!\nMarta jest mega otwartą, pozytywną osobą i jest w stanie ogarnąć dosłownie wszystko w ekspresowym tempie. Nie wiem co byśmy bez niej zrobili i jesteśmy niesamowicie wdzięczni za sprawienie że nasz ślub był dokładnie taki jaki sobie wymarzyliśmy a nawet jeszcze lepszy 😊",
+  },
+  {
+    id: 35,
+    name: "Lena & Bartek",
+    img: new URL("../assets/opinions/opinion-35.webp", import.meta.url).href,
+    content:
+      "Marta to absolutny skarb! 💖 Dzięki niej znaleźliśmy idealną salę, która okazała się strzałem w dziesiątkę. Od początku do końca była naszym wsparciem, odjęła nam ogrom stresu i sprawiła, że mogliśmy cieszyć się przygotowaniami bez nerwów. Ma w sobie niesamową energię, serce do swojej pracy i potrafi zadbać o każdy szczegół tak, aby wszystko wyszło perfekcyjnie. Nasze wesele było cudowne w dużej mierze dzięki niej. Marta jest nie tylko profesjonalistką, ale też przesympatyczną, kochaną osobą, z którą po prostu chce się spędzać czas. Polecamy z całego serca każdej parze, która marzy o pięknym i bezstresowym dniu! 💍✨",
+  },
+  {
+    id: 36,
+    name: "Monika & James",
+    img: new URL("../assets/opinions/opinion-36.webp", import.meta.url).href,
+    content:
+      "Nie wiemy nawet, od czego zacząć!\nMarta zorganizowała i koordynowała nasz polsko-angielski ślub 31.07.2025 – i możemy z pełnym przekonaniem powiedzieć, że była to najlepsza decyzja, jaką mogliśmy podjąć. Dzięki niej przygotowania przebiegły bezstresowo, a sam dzień ślubu był po prostu magiczny.\nMarta potrafi zdziałać cuda – podejrzewamy nawet, że udało jej się zorganizować słoneczną pogodę pomiędzy deszczowymi dniami!\nTo nie tylko profesjonalistka z ogromnym doświadczeniem i wiedzą, ale też ciepła, serdeczna osoba, zawsze dostępna i gotowa pomóc. Marta mówi w kilku językach, co było dla nas ogromnym ułatwieniem przy organizacji dwujęzycznego ślubu.\nJeśli ktoś szuka wsparcia przy planowaniu ślubu – Marta to absolutnie najlepszy wybór!\nMonika\n\nMarta was just fantastic from day one in organising our wedding day and, as a couple, she took all the pressure off us so we were able to fully enjoy our day. Our family and friends all commented on how wonderful the day was, how beautiful the venue and set up was, and how smoothly everything went, which was all a reflection of her tireless work. From knowing such a wide range of the best decorators, florists and caterers, to making use of her contacts at venues to get the best deal, she was absolutely brilliant and it meant we simply had to choose the best options for us. She covered everything with great attention, from the smallest detail to the biggest of elements on the day, making a busy and exceptionally complicated organising process seem incredibly smokth and easy. Without her, we simply would not have had such a memorable day, and we can’t thank her enough for that.\nJames",
   },
 ];
 
